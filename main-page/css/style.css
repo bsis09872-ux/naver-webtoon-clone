@@ -1,0 +1,171 @@
+/* 1. 헤더 전체 */
+header {
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+}
+
+/* 두 영역의 공통 너비와 가운데 정렬 */
+.Header_BrandBar,
+.Header_NaviBar {
+    width: 1190px;
+    margin: 0 auto;
+    flex-shrink: 0;
+}
+
+/* 화면 전체 폭 구분선 */
+header > hr {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    border: 0;
+    background-color: var(--color-background-soft);
+    flex-shrink: 0;
+}
+
+
+/* 2. 상단 브랜드바 */
+.Header_BrandBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 63px;
+}
+
+
+/* 2-1. 왼쪽 로고·서비스 링크 */
+.BrandBar_left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.BrandBar_left img {
+    width: 60px;
+    height: 12px;
+}
+
+.BrandBar_left .webtoon_page {
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--color-text);
+}
+
+.BrandBar_bar {
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.BrandBar_left .BrandBar_link {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--color-text-soft);
+}
+
+
+/* 2-2. 오른쪽 검색·사용자 영역 */
+.BrandBar_right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 368px;
+    height: 63px;
+    font-size: 16px;
+}
+
+/* 검색창 바깥 상자 */
+.SearchBox {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    width: 268px;
+    height: 35px;
+    padding: 0 10px;
+    font-size: 14px;
+    border: 1px solid var(--color-text-soft);
+}
+
+/* 검색 입력 */
+.SearchBox input {
+    flex: 1;
+    min-width: 0;
+    padding: 0;
+    color: inherit;
+    border: 0;
+    background: transparent;
+}
+
+/* 검색 아이콘 */
+.SearchBox button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-left: 8px;
+}
+
+/* 로그인·서비스 메뉴 묶음 */
+.Login_Service_btns {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 10px;
+    height: 28px;
+}
+
+.NaverLogin_btn {
+    width: 46px;
+    height: 22px;
+    font-size: 12px;
+    white-space: nowrap;
+    border: 1px solid var(--color-text-soft);
+}
+
+
+/* 3. 주요 내비게이션 */
+.Header_NaviBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+}
+
+.Header_NaviBar > ul {
+    display: flex;
+    align-items: center;
+}
+
+.Header_NaviBar li {
+    height: 55px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.Header_NaviBar li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 18px;
+}
+
+.Header_NaviBar .navi_home {
+    color: #fff;
+    background-color: var(--color-primary);
+}
+
+/* 작가 서비스 버튼 */
+.Creators_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 151px;
+    height: 39px;
+    font-size: 16px;
+    line-height: 1;
+    color: #fff;
+    background-color: var(--color-primary);
+}

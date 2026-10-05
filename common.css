@@ -1,0 +1,89 @@
+/* 폰트 지정 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* 전역 변수 선언 */
+:root {
+    --color-primary: #03c75a;
+    --color-background-soft: #f2f4f5;
+    --color-text: #1a1d24;
+    --color-text-soft: #898989;
+    --font-family: Pretendard, Helvetica, -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic",
+    "돋움", Dotum, sans-serif;
+    --color-focus: rgb(16, 16, 235);
+}
+
+
+/* 초기화 */
+*,
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    line-height: 1.5; 
+} /* px 단위가 없으면 각 요소의 글자 크기의 1.5배로 줄 높이가 설정됨. 예: 16px이면 줄 높이는 16의 1.5배인 24px이 된다.  */
+
+ul, ol, li {
+    padding: 0;
+    margin: 0;
+    list-style: none; 
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin:0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    padding:0;
+    border:0;
+    background:none;
+    cursor: pointer;
+}
+
+/* 공통 양식 */
+body {
+    font-family: var(--font-family);
+    color: var(--color-text);
+}
+
+input, button, select, textarea {
+    font: inherit;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
