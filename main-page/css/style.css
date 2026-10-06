@@ -254,6 +254,7 @@ service_menu_btn {
     font-size: 14px;
     color:var(--color-text);
     font-weight: 100;
+    cursor: pointer;
 }
 
 .Daily_Head .filters button.on {
@@ -295,9 +296,27 @@ service_menu_btn {
 
 }
 
-.DailyList_nxt_btn {
-    font-size: 16px;
-    background-color: #fff;
-    box-shadow: 5px 5px 30px 5px rgba(158, 158, 158, 0.5);
-    border-radius: 100px;
+.DailyList_wrap {
+    position: relative;
 }
+
+.DailyList_nxt_btn {
+    position: absolute;
+    top: 150px;
+    right:0;
+    transform: translate(50%, -50%);
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+
+    font-size: 16px;
+    color: var(--color-line-primary);
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
+}
+
