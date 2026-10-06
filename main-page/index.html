@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./images/Logotype/WEBTOON_Logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="js/main-page.js"></script>
 </head>
 <body>
     <header>
@@ -67,6 +68,88 @@
         </nav>
         <hr>
     </header>
+    <main class="container">
+        <div class="HomeView_Daily">
+            <div class="Daily_Head">
+                <h2>화요웹툰</h2>
+                <div class="filters">
+                    <button type="button" class="on">인기순</button>
+                    <button type="button">업데이트순</button>
+                    <button type="button">조회순</button>
+                    <button type="button">별점순</button>
+                </div>
+            </div>
+            <a href="https://comic.naver.com/webtoon?tab=tue" >
+                <span>화요웹툰 전체보기</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </div>
+        <ul class="DailyList">
+            <li>
+                <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/01_별빛_우체국.png" alt="별빛 우체국 포스터">
+                </div>
+                <div class="Daily_info">
+                    <div class="Daily_title">
+                        <span class="updated_badge">up</span>
+                        <span>별빛 우체국</span>
+                    </div>
+                    <a href="작가페이지">작가명1</a>
+                </div>
+            </li>
+            <li>
+                <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/02_월요일의_고백.png" alt="월요일의 고백 포스터">
+                </div>
+                <div class="Daily_info">
+                    <div class="Daily_title">
+                        <span class="updated_badge">up</span>
+                        <span>월요일의 고백</span>
+                    </div>
+                    <a href="작가페이지">작가명2</a>
+                </div>
+            </li>
+            <li>
+                <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/03_검은_달의_기사.png" alt="검은 달의 기사 포스터">
+                </div>
+                <div class="Daily_info">
+                    <div class="Daily_title">
+                        <span class="updated_badge">up</span>
+                        <span>검은 달의 기사</span>
+                    </div>
+                    <a href="작가페이지">작가명3</a>
+                </div>
+            </li>
+            <li>
+                <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/04_고양이_사장님.png" alt="고양이 사장님 포스터">
+                </div>
+                <div class="Daily_info">
+                    <div class="Daily_title">
+                        <span class="updated_badge">up</span>
+                        <span>고양이 사장님</span>
+                    </div>
+                    <a href="작가페이지">작가명4</a>
+                </div>
+            </li>
+            <li>
+                <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/05_마지막_열차.png" alt="마지막 열차 포스터">
+                </div>
+                <div class="Daily_info">
+                    <div class="Daily_title">
+                        <span class="updated_badge">up</span>
+                        <span>마지막 열차</span>
+                    </div>
+                    <a href="작가페이지">작가명5</a>
+                </div>
+            </li>
+        </ul>
+        <button type="button" class="DailyList_nxt_btn">
+            <i class="fa-thin fa-chevron-right"></i>
+        </button>
+    </main>
 </body>
 </html>
 
