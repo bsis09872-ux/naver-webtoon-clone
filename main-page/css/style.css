@@ -1,322 +1,514 @@
-/* 모든 영역 전체 공통 너비와 가운데 정렬 */
+/* ========================================
+   0. 공통 너비 · 가운데 정렬
+   ======================================== */
+
 .Header_BrandBar,
 .Header_NaviBar,
-.container {
-    width: 1190px;
-    margin: 0 auto;
-    flex-shrink: 0;
+.container,
+footer {
+  flex-shrink: 0;
+  width: 1190px;
+  margin: 0 auto;
 }
 
-/* 1. 헤더 전체 */
+/* ========================================
+   1. 헤더 전체 · 구분선
+   ======================================== */
+
 header {
-    display: flex;
-    flex-direction: column;
-    min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
 }
 
-
-/* 화면 전체 폭 구분선 */
+/* 화면 전체 폭을 채우는 구분선 */
 header > hr {
-    width: 100%;
-    height: 1px;
-    margin: 0;
-    border: 0;
-    background-color: var(--color-line-primary);
-    flex-shrink: 0;
+  flex-shrink: 0;
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  border: 0;
+  background-color: var(--color-line-primary);
 }
 
+/* ========================================
+   2. 상단 브랜드바
+   ======================================== */
 
-/* 2. 상단 브랜드바 */
 .Header_BrandBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 63px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 63px;
 }
 
+/* 2-1. 왼쪽 로고 · 서비스 링크 */
 
-/* 2-1. 왼쪽 로고·서비스 링크 */
 .BrandBar_left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .BrandBar_left img {
-    width: 60px;
-    height: 12px;
+  width: 60px;
+  height: 12px;
 }
 
 .BrandBar_left .webtoon_page {
-    margin-left: 10px;
-    font-size: 24px;
-    font-weight: 900;
-    color: var(--color-text);
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--color-text);
 }
 
 .BrandBar_bar {
-    font-size: 16px;
-    font-weight: 100;
-    color: var(--color-line-primary);
+  font-size: 16px;
+  font-weight: 100;
+  color: var(--color-line-primary);
 }
 
 .BrandBar_left .BrandBar_link {
-    font-size: 20px;
-    font-weight: 300;
-    color: var(--color-line-primary);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--color-line-primary);
 }
 
+/* 2-2. 오른쪽 검색 · 사용자 영역 */
 
-/* 2-2. 오른쪽 검색·사용자 영역 */
 .BrandBar_right {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 368px;
-    height: 63px;
-    font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 368px;
+  height: 63px;
+  font-size: 16px;
 }
 
 /* 검색창 바깥 상자 */
 .SearchBox {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    width: 268px;
-    height: 35px;
-    padding: 0 10px;
-    font-size: 14px;
-    border: 1px solid var(--color-line-primary);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 268px;
+  height: 35px;
+  padding: 0 10px;
+  font-size: 14px;
+  border: 1px solid var(--color-line-primary);
 }
 
 /* 검색 입력 */
 .SearchBox input {
-    flex: 1;
-    min-width: 0;
-    padding: 0;
-    color: inherit;
-    border: 0;
-    background: transparent;
-    color: var(--color-line-primary);
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  color: var(--color-line-primary);
+  border: 0;
+  background: transparent;
 }
 
 /* 검색 아이콘 */
 .SearchBox button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    margin-left: 8px;
-    font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 8px;
+  font-size: 18px;
 }
 
-/* 로그인·서비스 메뉴 묶음 */
+/* 로그인 · 서비스 메뉴 묶음 */
 .Login_Service_btns {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    gap: 10px;
-    height: 28px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+  height: 28px;
 }
 
 .NaverLogin_btn {
-    width: 46px;
-    height: 22px;
-    font-size: 12px;
-    white-space: nowrap;
-    border: 1px solid var(--color-text-soft);
+  width: 46px;
+  height: 22px;
+  font-size: 12px;
+  white-space: nowrap;
+  border: 1px solid var(--color-text-soft);
 }
 
-/* 전체 네이버 서비스 메뉴 버튼*/
-service_menu_btn {
-    width: 16px;
-    height: 16px;
-    font-size: 12px;
+.service_menu_btn {
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
 }
 
+/* ========================================
+   3. 주요 내비게이션
+   ======================================== */
 
-/* 3. 주요 내비게이션 */
 .Header_NaviBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
 }
 
 .Header_NaviBar > ul {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .Header_NaviBar li {
-    height: 55px;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--color-text);
+  height: 55px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
 }
 
+/* 링크 전체를 클릭 영역으로 사용 */
 .Header_NaviBar li > a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 0 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 18px;
 }
 
 .Header_NaviBar .navi_home {
-    color: #fff;
-    background-color: var(--color-primary);
+  color: #fff;
+  background-color: var(--color-primary);
 }
 
 /* 작가 서비스 버튼 */
 .Creators_btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    width: 151px;
-    height: 39px;
-    font-size: 16px;
-    line-height: 1;
-    color: #fff;
-    background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 151px;
+  height: 39px;
+  font-size: 16px;
+  line-height: 1;
+  color: #fff;
+  background-color: var(--color-primary);
 }
 
-/* 메인 컨텐츠 : 홈뷰_데일리*/
+/* ========================================
+   4. 데일리 콘텐츠 제목 · 전체보기
+   ======================================== */
+
 .HomeView_Daily {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-}
-
-.HomeView_Daily h2 {
-    font-size: 20px;
-    color: var(--color-text);
-    line-height: 21px;
-    font-weight: 600;
-}
-
-.HomeView_Daily i {
-    font-size: 12px;
-    line-height: 21px;
-}
-
-.HomeView_Daily span {
-    color: var(--color-text-soft);
-    line-height: 21px;
-    font-weight: 500;
-    line-height: 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
 }
 
 .Daily_Head {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
-.DailyList > ul {
-    display: flex;
-    align-items: center;
+.HomeView_Daily h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 21px;
+  color: var(--color-text);
 }
 
-.DailyList .HomeView_Poster {
-    width: 230px;
-    height: 300px;
-    overflow: hidden;
+.HomeView_Daily i {
+  font-size: 12px;
+  line-height: 21px;
 }
 
-.DailyList img {
-    width:230px;
-    object-fit: cover;
-    border-radius: 4px;
-    transition: 0.3s all;
+.HomeView_Daily span {
+  font-weight: 500;
+  line-height: 21px;
+  color: var(--color-text-soft);
 }
 
-.DailyList img:hover {
-    transform:scale(1.2);
+/* ========================================
+   5. 데일리 정렬 필터 · 구분점
+   ======================================== */
+
+.Daily_Head .filters {
+  display: flex;
 }
 
-.DailyList li {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--color-text);
+.Daily_Head .filters > div {
+  position: relative;
+  padding: 0 8px;
 }
 
-.DailyList li > a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 0 18px;
+.Daily_Head .filters > div:first-of-type {
+  margin-left: 10px;
 }
 
-.Daily_info a {
-    font-size: 14px;
-    color:var(--color-text);
-    font-weight: 100;
-    cursor: pointer;
+/* 첫 항목을 제외한 필터 앞에 구분점 표시 */
+.Daily_Head .filters > div:not(.first)::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 2px);
+  left: -2px;
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-line-primary);
 }
 
 .Daily_Head .filters button.on {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
 
-.DailyList .Daily_info {
-    width: 235px;
-    height: 55px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
-}
-.DailyList .Daily_title {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-}
+/* ========================================
+   6. 작품 목록 · 포스터
+   ======================================== */
 
-.updated_badge {
-    color: red;
-    font-size: 10px;
-    font-weight: 200;
-    border: 1px solid red;
-    border-radius: 0.5px;
-    width: 17px;
-    height: 13px;
-    text-align: center;
-    
+.DailyList_wrap {
+  /* 다음 버튼의 위치 기준 */
+  position: relative;
 }
 
 .DailyList {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.DailyList_wrap {
-    position: relative;
+.DailyList li {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
 }
+
+.DailyList .HomeView_Poster {
+  width: 230px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.DailyList img {
+  width: 230px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.DailyList img:hover {
+  transform: scale(1.2);
+}
+
+/* ========================================
+   7. 작품 제목 · 작가명 · 업데이트 표시
+   ======================================== */
+
+.DailyList .Daily_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 235px;
+  height: 55px;
+  text-align: left;
+}
+
+.DailyList .Daily_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.DailyList .Daily_title span {
+  line-height: 1;
+}
+
+.DailyList .Daily_title span + span {
+  margin-left: 5px;
+}
+
+.Daily_info a {
+  font-size: 14px;
+  font-weight: 100;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.updated_badge {
+  width: 17px;
+  height: 13px;
+  font-size: 10px;
+  font-weight: 200;
+  text-align: center;
+  color: red;
+  border: 1px solid red;
+  border-radius: 0.5px;
+}
+
+/* ========================================
+   8. 다음 작품 버튼
+   ======================================== */
 
 .DailyList_nxt_btn {
-    position: absolute;
-    top: 150px;
-    right:0;
-    transform: translate(50%, -50%);
-    z-index: 1;
+  /* 부모 DailyList_wrap을 기준으로 겹쳐 배치 */
+  position: absolute;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
+  /* 위쪽 130px + 버튼 높이 절반 20px = 중심 150px */
+  top: 130px;
 
-    font-size: 16px;
-    color: var(--color-line-primary);
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
+  /* 40px 버튼이 오른쪽 끝에 반쯤 걸치도록 이동 */
+  right: -20px;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+
+  font-size: 16px;
+  color: var(--color-line-primary);
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
 }
 
+/* ========================================
+   9. 가로 광고 배너
+   ======================================== */
+
+.container .banner {
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.banner_horizon img {
+  margin-top: 30px;
+}
+
+/* ========================================
+   10. 푸터 전체
+   ======================================== */
+
+footer {
+  display: block;
+  height: 421px;
+  margin: 45px auto 90px;
+  font-size: 13px;
+  font-weight: 100;
+  color: var(--color-text-soft);
+}
+
+footer li {
+  line-height: 19px;
+}
+
+/* ========================================
+   11. 푸터 이미지 배너
+   ======================================== */
+
+.footer_btn_banner {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* ========================================
+   12. 푸터 Grid 배치 — 적용 전
+   ======================================== */
+
+/*
+  footer_grid_wrap의 직접 자식 세 개를 배치:
+  첫째 행: 왼쪽 약관 | 오른쪽 약관
+  둘째 행: 회사 정보가 두 열을 모두 차지
+
+  아래 주석을 해제하면 Grid가 적용됨.
+*/
+
+/*
+.footer_grid_wrap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 30px;
+}
+
+.footer_company_info {
+  grid-column: span 2;
+}
+*/
+
+/* ========================================
+   13. 푸터 약관 · 저작권
+   ======================================== */
+
+/* 각 약관 영역 안의 링크 목록을 가로 배치 */
+.footer_terms_left ul,
+.footer_terms_right ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+}
+
+.copyright_NaverWebtoon {
+  padding: 4px 5px 0 0;
+}
+
+/* ========================================
+   14. 푸터 회사 정보
+   ======================================== */
+
+.footer_company_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_company_info ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: left;
+}
+
+/* ========================================
+   15. 푸터 하단 주소 · 안내
+   ======================================== */
+
+/* 최신 HTML에서 주소 목록은 footer_under 안에 있음 */
+.footer_under ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: left;
+}
+
+/* 부모: 같은 너비의 두 열 생성 */
+.footer_grid_wrap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 30px;
+}
+
+/* 왼쪽: 첫째 행, 첫째 열 */
+.footer_terms_left {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+/* 오른쪽: 첫째 행, 둘째 열 */
+.footer_terms_right {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
+
+/* 회사 정보: 둘째 행, 두 열 전체 */
+.footer_company_info {
+  grid-row: 2 / 3;
+  grid-column: 1 / 3;
+}
+
+.footer_terms_left::after {
+  position: absolute;
+  width: 1px;
+  background: var(--color-line-primary);
+  content: "";
+}
