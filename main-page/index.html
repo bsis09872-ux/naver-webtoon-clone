@@ -1,249 +1,574 @@
 <doctype html>
-  <html lang="ko">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>네이버 웹툰</title>
-      <link rel="stylesheet" href="../common.css" />
-      <link rel="stylesheet" href="./css/style.css" />
-      <link
-        rel="icon"
-        type="image/png"
-        href="./images/Logotype/WEBTOON_Logo.png"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      />
-      <script src="js/main-page.js"></script>
-    </head>
-    <body>
-      <header>
-        <div class="Header_BrandBar">
-          <h1 class="BrandBar_left">
-            <a href="https://www.naver.com/">
-              <img src="./images/Logotype/Logotype_Black.svg" alt="네이버" />
-            </a>
-            <a href="https://comic.naver.com/index">
-              <span class="webtoon_page">웹툰</span>
-            </a>
-            <span class="BrandBar_bar">|</span>
-            <a
-              class="BrandBar_link"
-              target="_blank"
-              href="https://novel.naver.com/"
-            >
-              <span>웹소설</span>
-            </a>
-            <span class="BrandBar_bar">|</span>
-            <a
-              class="BrandBar_link"
-              target="_blank"
-              href="https://series.naver.com/comic/home.series"
-            >
-              <span>시리즈</span>
-            </a>
-          </h1>
-          <div class="BrandBar_right">
-            <div class="SearchBox">
-              <input placeholder="제목/작가로 검색할 수 있습니다." />
-              <button type="button">
-                <i class="fa-brands fa-sistrix"> </i>
-              </button>
-            </div>
-            <div class="Login_Service_btns">
-              <button type="button" class="NaverLogin_btn">로그인</button>
-              <button type="button" class="service_menu_btn">
-                <i class="fa-solid fa-grip"> </i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <hr />
-        <nav class="Header_NaviBar">
-          <ul>
-            <li class="navi_home">
-              <a href="https://comic.naver.com/index">홈</a>
-            </li>
-            <li>
-              <a href="https://comic.naver.com/webtoon">웹툰</a>
-            </li>
-            <li>
-              <a target="_blank" href="https://comic.naver.com/cuts/v">컷츠</a>
-            </li>
-            <li>
-              <a href="https://comic.naver.com/bestChallenge">베스트도전</a>
-            </li>
-            <li>
-              <a href="https://comic.naver.com/challenge">도전만화</a>
-            </li>
-            <li>
-              <a
-                href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fcomic.naver.com%2Fmypage%2Ffavorite"
-                >마이페이지</a
-              >
-            </li>
-          </ul>
-          <button type="button" class="Creators_btn">CREATOR'S</button>
-        </nav>
-        <hr />
-      </header>
-      <main class="container">
-        <div class="HomeView_Daily">
-          <div class="Daily_Head">
-            <h2>화요웹툰</h2>
-            <div class="filters">
-              <div class="first">
-                <button type="button" class="on">인기순</button>
-              </div>
-              <div>
-                <button type="button">업데이트순</button>
-              </div>
-              <div>
-                <button type="button">조회순</button>
-              </div>
-              <div>
-                <button type="button">별점순</button>
-              </div>
-            </div>
-          </div>
-          <a href="https://comic.naver.com/webtoon?tab=tue">
-            <span>화요웹툰 전체보기</span>
-            <i class="fa-solid fa-chevron-right"> </i>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>네이버 웹툰</title>
+    <link rel="stylesheet" href="../common.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./images/Logotype/WEBTOON_Logo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="js/main-page.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="Header_BrandBar">
+        <h1 class="BrandBar_left">
+          <a href="https://www.naver.com/">
+            <img src="./images/Logotype/Logotype_Black.svg" alt="네이버" />
           </a>
+          <a href="https://comic.naver.com/index">
+            <span class="webtoon_page">웹툰</span>
+          </a>
+          <span class="BrandBar_bar">|</span>
+          <a
+            class="BrandBar_link"
+            target="_blank"
+            href="https://novel.naver.com/"
+          >
+            <span>웹소설</span>
+          </a>
+          <span class="BrandBar_bar">|</span>
+          <a
+            class="BrandBar_link"
+            target="_blank"
+            href="https://series.naver.com/comic/home.series"
+          >
+            <span>시리즈</span>
+          </a>
+        </h1>
+        <div class="BrandBar_right">
+          <div class="SearchBox">
+            <input placeholder="제목/작가로 검색할 수 있습니다." />
+            <button type="button">
+              <i class="fa-brands fa-sistrix"> </i>
+            </button>
+          </div>
+          <div class="Login_Service_btns">
+            <button type="button" class="NaverLogin_btn">로그인</button>
+            <button type="button" class="service_menu_btn">
+              <i class="fa-solid fa-grip"> </i>
+            </button>
+          </div>
         </div>
-        <div class="DailyList_wrap">
-          <ul class="DailyList">
-            <li>
-              <div class="HomeView_Poster">
-                <img
-                  src="./images/webtoon_poster_mockup/01_별빛_우체국.png"
-                  alt="별빛 우체국 포스터"
-                />
-              </div>
-              <div class="Daily_info">
-                <div class="Daily_title">
-                  <span class="updated_badge">up</span>
-                  <span>별빛 우체국</span>
-                </div>
-                <a href="작가페이지">작가명1</a>
-              </div>
-            </li>
-            <li>
-              <div class="HomeView_Poster">
-                <img
-                  src="./images/webtoon_poster_mockup/02_월요일의_고백.png"
-                  alt="월요일의 고백 포스터"
-                />
-              </div>
-              <div class="Daily_info">
-                <div class="Daily_title">
-                  <span class="updated_badge">up</span>
-                  <span>월요일의 고백</span>
-                </div>
-                <a href="작가페이지">작가명2</a>
-              </div>
-            </li>
-            <li>
-              <div class="HomeView_Poster">
-                <img
-                  src="./images/webtoon_poster_mockup/03_검은_달의_기사.png"
-                  alt="검은 달의 기사 포스터"
-                />
-              </div>
-              <div class="Daily_info">
-                <div class="Daily_title">
-                  <span class="updated_badge">up</span>
-                  <span>검은 달의 기사</span>
-                </div>
-                <a href="작가페이지">작가명3</a>
-              </div>
-            </li>
-            <li>
-              <div class="HomeView_Poster">
-                <img
-                  src="./images/webtoon_poster_mockup/04_고양이_사장님.png"
-                  alt="고양이 사장님 포스터"
-                />
-              </div>
-              <div class="Daily_info">
-                <div class="Daily_title">
-                  <span class="updated_badge">up</span>
-                  <span>고양이 사장님</span>
-                </div>
-                <a href="작가페이지">작가명4</a>
-              </div>
-            </li>
-            <li>
-              <div class="HomeView_Poster">
-                <img
-                  src="./images/webtoon_poster_mockup/05_마지막_열차.png"
-                  alt="마지막 열차 포스터"
-                />
-              </div>
-              <div class="Daily_info">
-                <div class="Daily_title">
-                  <span class="updated_badge">up</span>
-                  <span>마지막 열차</span>
-                </div>
-                <a href="작가페이지">작가명5</a>
-              </div>
-            </li>
-          </ul>
-          <button type="button" class="DailyList_nxt_btn">
-            <i class="fa-solid fa-chevron-right"> </i>
-          </button>
-        </div>
-        <a class="banner_horizon banner">
-          <img
-            src="./images/fictional_ad_banners/밤책방_1190x100.png"
-            alt="가로형 광고 배너"
-          />
-        </a>
-        <div class="content_wrap">
-          <section class="content_left"></section>
-          <aside class="content_rigt"></aside>
-        </div>
-      </main>
-      <footer>
-        <ul class="footer_btn_banner">
-          <li>
-            <img
-              src="./images/Naver_banners_290x130/창작자_모집.png"
-              alt="네웹 창작자 모집"
-            />
+      </div>
+      <hr />
+      <nav class="Header_NaviBar">
+        <ul>
+          <li class="navi_home">
+            <a href="https://comic.naver.com/index">홈</a>
           </li>
           <li>
-            <img
-              src="./images/Naver_banners_290x130/광고_문의.png"
-              alt="네웹 광고 문의"
-            />
+            <a href="https://comic.naver.com/webtoon">웹툰</a>
           </li>
           <li>
-            <img
-              src="./images/Naver_banners_290x130/팀원_모집.png"
-              alt="네웹 팀원 모집"
-            />
+            <a target="_blank" href="https://comic.naver.com/cuts/v">컷츠</a>
           </li>
           <li>
-            <img
-              src="./images/Naver_banners_290x130/협업_제안.png"
-              alt="네웹 협업 제안"
-            />
+            <a href="https://comic.naver.com/bestChallenge">베스트도전</a>
+          </li>
+          <li>
+            <a href="https://comic.naver.com/challenge">도전만화</a>
+          </li>
+          <li>
+            <a
+              href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fcomic.naver.com%2Fmypage%2Ffavorite"
+              >마이페이지</a
+            >
           </li>
         </ul>
-        <nav class="footer_navi_bar"></nav>
-        <hr />
-        <!-- grid 를 위한 구간 3분할! -->
-        <div class="footer_grid_wrap">
-          <section class="footer_terms_left">
+        <button type="button" class="Creators_btn">CREATOR'S</button>
+      </nav>
+      <hr />
+    </header>
+    <main class="container">
+      <div class="HomeView_Daily">
+        <div class="Daily_Head">
+          <h2>화요웹툰</h2>
+          <div class="filters">
+            <div class="first">
+              <button type="button" class="on">인기순</button>
+            </div>
+            <div>
+              <button type="button">업데이트순</button>
+            </div>
+            <div>
+              <button type="button">조회순</button>
+            </div>
+            <div>
+              <button type="button">별점순</button>
+            </div>
+          </div>
+        </div>
+        <a href="https://comic.naver.com/webtoon?tab=tue">
+          <span>화요웹툰 전체보기</span>
+          <i class="fa-solid fa-chevron-right"> </i>
+        </a>
+      </div>
+      <div class="DailyList_wrap">
+        <ul class="DailyList">
+          <li>
+            <div class="HomeView_Poster">
+              <img
+                src="./images/webtoon_poster_mockup/01_별빛_우체국.png"
+                alt="별빛 우체국 포스터"
+              />
+            </div>
+            <div class="Daily_info">
+              <div class="Daily_title">
+                <span class="updated_badge">up</span>
+                <span>별빛 우체국</span>
+              </div>
+              <a href="작가페이지">작가명1</a>
+            </div>
+          </li>
+          <li>
+            <div class="HomeView_Poster">
+              <img
+                src="./images/webtoon_poster_mockup/02_월요일의_고백.png"
+                alt="월요일의 고백 포스터"
+              />
+            </div>
+            <div class="Daily_info">
+              <div class="Daily_title">
+                <span class="updated_badge">up</span>
+                <span>월요일의 고백</span>
+              </div>
+              <a href="작가페이지">작가명2</a>
+            </div>
+          </li>
+          <li>
+            <div class="HomeView_Poster">
+              <img
+                src="./images/webtoon_poster_mockup/03_검은_달의_기사.png"
+                alt="검은 달의 기사 포스터"
+              />
+            </div>
+            <div class="Daily_info">
+              <div class="Daily_title">
+                <span class="updated_badge">up</span>
+                <span>검은 달의 기사</span>
+              </div>
+              <a href="작가페이지">작가명3</a>
+            </div>
+          </li>
+          <li>
+            <div class="HomeView_Poster">
+              <img
+                src="./images/webtoon_poster_mockup/04_고양이_사장님.png"
+                alt="고양이 사장님 포스터"
+              />
+            </div>
+            <div class="Daily_info">
+              <div class="Daily_title">
+                <span class="updated_badge">up</span>
+                <span>고양이 사장님</span>
+              </div>
+              <a href="작가페이지">작가명4</a>
+            </div>
+          </li>
+          <li>
+            <div class="HomeView_Poster">
+              <img
+                src="./images/webtoon_poster_mockup/05_마지막_열차.png"
+                alt="마지막 열차 포스터"
+              />
+            </div>
+            <div class="Daily_info">
+              <div class="Daily_title">
+                <span class="updated_badge">up</span>
+                <span>마지막 열차</span>
+              </div>
+              <a href="작가페이지">작가명5</a>
+            </div>
+          </li>
+        </ul>
+        <button type="button" class="DailyList_nxt_btn">
+          <i class="fa-solid fa-chevron-right"> </i>
+        </button>
+      </div>
+      <a class="banner_horizon banner">
+        <img
+          src="./images/fictional_ad_banners/밤책방_1190x100.png"
+          alt="가로형 광고 배너"
+        />
+      </a>
+
+
+      <div class="content_wrap">
+
+        <section class="content_left">
+          <div class="HomeView_Hot_Genre ">
+            <div class="Hot_Genre_Head">
+              <h2>
+              가장 핫한
+              <span>감성</span>
+              웹툰만 모아봤어요!
+              </h2>
+              <div class="filters">
+                <div class="first">
+                  <button type="button">로맨스</button>
+                </div>
+                <div>
+                  <button type="button">판타지</button>
+                </div>
+                <div>
+                  <button type="button">액션</button>
+                </div>
+                <div>
+                  <button type="button">일상</button>
+                </div>
+                <div>
+                  <button type="button">스릴러</button>
+                </div>
+                <div>
+                  <button type="button">개그</button>
+                </div>
+                <div>
+                  <button type="button">무협/사극</button>
+                </div>
+                <div>
+                  <button type="button">드라마</button>
+                </div>
+                <div>
+                  <button type="button" class="on">감성</button>
+                </div>
+                <div>
+                  <button type="button">스포츠</button>
+                </div>
+              </div>
+            </div>
+            <a href="https://comic.naver.com/webtoon?tab=genre&genre=SENSIBILITY">
+              <span>감성웹툰 더보기</span>
+              <i class="fa-solid fa-chevron-right"> </i>
+            </a>
+          </div>
+          <div class="GenreList_wrap">
+            <ul class="GenreList">
+              <li>
+                <div class="HomeView_Poster">
+                  <img src="./images/webtoon_poster_mockup/06_옥상_정원.png" alt="옥상 정원 포스터" />
+                </div>
+                <img src="./icons/ranking-1.svg" alt="1위" class="Genre_rank" />
+                <div class="Genre_info">
+                  <span class="updated_badge">up</span>
+                  <span>옥상 정원</span>
+                </div>
+              </li>
+
+              <li>
+                <div class="HomeView_Poster">
+                  <img src="./images/webtoon_poster_mockup/07_시간_수리점.png" alt="시간 수리점 포스터" />
+                </div>
+                <img src="./icons/ranking-2.svg" alt="2위" class="Genre_rank" />
+                <div class="Genre_info">
+                  <span class="updated_badge">up</span>
+                  <span>시간 수리점</span>
+                </div>
+              </li>
+
+              <li>
+                <div class="HomeView_Poster">
+                  <img src="./images/webtoon_poster_mockup/08_우리의_여름_경기.png" alt="우리의 여름 경기 포스터" />
+                </div>
+                <img src="./icons/ranking-3.svg" alt="3위" class="Genre_rank" />
+                <div class="Genre_info">
+                  <span class="updated_badge">up</span>
+                  <span>우리의 여름 경기</span>
+                </div>
+              </li>
+
+              <li>
+                <div class="HomeView_Poster">
+                  <img src="./images/webtoon_poster_mockup/09_달토끼의_식탁.png" alt="달토끼의 식탁 포스터" />
+                </div>
+                <img src="./icons/ranking-4.svg" alt="4위" class="Genre_rank" />
+                <div class="Genre_info">
+                  <span class="updated_badge">up</span>
+                  <span>달토끼의 식탁</span>
+                </div>
+              </li>
+
+              <li>
+                <div class="HomeView_Poster">
+                  <img src="./images/webtoon_poster_mockup/10_로그인_다른_세계.png" alt="로그인 다른 세계 포스터" />
+                </div>
+                <img src="./icons/ranking-5.svg" alt="5위" class="Genre_rank" />
+                <div class="Genre_info">
+                  <span class="updated_badge">up</span>
+                  <span>로그인 다른 세계</span>
+                </div>
+              </li>
+            </ul>
+            <button type="button" class="DailyList_nxt_btn GenreList_nxt_btn">
+              <i class="fa-solid fa-chevron-right"> </i>
+            </button>
+          </div>
+          <!-- 따끈따끈 업데이트 매일+ -->
+          <section class="HomeView_Updates">
+            <div class="Updates_Head">
+              <div class="Updates_Head_left">
+                <h2>따끈따끈 업데이트 매일+</h2>
+
+                <div class="Updates_tooltip">
+                  <span>
+                    앱에서는 매일+ 작품의
+                    <strong>무료대여권 매일 지급!</strong>
+                  </span>
+                  <button class="Updates_tooltip_close" type="button">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+              </div>
+
+              <a class="Updates_more" href="#">
+                <span>매일+ 웹툰 더보기</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+
+            <div class="UpdatesList_wrap">
+              <ul class="UpdatesList">
+                <li>
+                  <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/11_편의점_새벽_두_시.png" alt="편의점 새벽 두 시 포스터" />
+                  </div>
+                  <div class="Updates_info">
+                    <div class="Updates_title">
+                      <span class="updated_badge">UP</span>
+                      <span>편의점 새벽 두 시</span>
+                    </div>
+                    <span class="Updates_author">작가명1</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/12_비_오는_골목.png" alt="비 오는 골목 포스터" />
+                  </div>
+                  <div class="Updates_info">
+                    <div class="Updates_title">
+                      <span class="updated_badge">UP</span>
+                      <span>비 오는 골목</span>
+                    </div>
+                    <span class="Updates_author">작가명2</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/13_우리_집_감자.png" alt="우리 집 감자 포스터" />
+                  </div>
+                  <div class="Updates_info">
+                    <div class="Updates_title">
+                      <span class="updated_badge">UP</span>
+                      <span>우리 집 감자</span>
+                    </div>
+                    <span class="Updates_author">작가명3</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/14_동네_탐정단.png" alt="동네 탐정단 포스터" />
+                  </div>
+                  <div class="Updates_info">
+                    <div class="Updates_title">
+                      <span class="updated_badge">UP</span>
+                      <span>동네 탐정단</span>
+                    </div>
+                    <span class="Updates_author">작가명4</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/15_퇴근_후_한_페이지.png" alt="퇴근 후 한 페이지 포스터" />
+                  </div>
+                  <div class="Updates_info">
+                    <div class="Updates_title">
+                      <span class="updated_badge">UP</span>
+                      <span>퇴근 후 한 페이지</span>
+                    </div>
+                    <span class="Updates_author">작가명5</span>
+                  </div>
+                </li>
+              </ul>
+
+              <button class="UpdatesList_nxt_btn" type="button">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </section>
+          <!-- 웹툰 세트 할인 -->
+          <section class="HomeView_Set">
+            <div class="Set_Head">
+              <h2>웹툰 세트 할인</h2>
+              <a class="Set_more" href="#">
+                <span>추천 만화 더보기</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+
+            <div class="SetList_wrap">
+              <ul class="SetList">
+                <li>
+                  <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/16_오늘도_빵_굽는_중.png" alt="오늘도 빵 굽는 중 포스터" />
+                  </div>
+                  <div class="Set_info">
+                    <div class="Set_title">오늘도 빵 굽는 중</div>
+                    <span class="Set_author">작가명1</span>
+                    <span class="Set_discount">세트 소장 25% 할인</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/17_소행성_302호.png" alt="소행성 302호 포스터" />
+                  </div>
+                  <div class="Set_info">
+                    <div class="Set_title">소행성 302호</div>
+                    <span class="Set_author">작가명2</span>
+                    <span class="Set_discount">세트 소장 25% 할인</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/18_초록_버스의_종점.png" alt="초록 버스의 종점 포스터" />
+                  </div>
+                  <div class="Set_info">
+                    <div class="Set_title">초록 버스의 종점</div>
+                    <span class="Set_author">작가명3</span>
+                    <span class="Set_discount">세트 소장 25% 할인</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/19_말_없는_라이벌.png" alt="말 없는 라이벌 포스터" />
+                  </div>
+                  <div class="Set_info">
+                    <div class="Set_title">말 없는 라이벌</div>
+                    <span class="Set_author">작가명4</span>
+                    <span class="Set_discount">세트 소장 25% 할인</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="HomeView_Poster">
+                    <img src="./images/webtoon_poster_mockup/20_작은_유령의_월세.png" alt="작은 유령의 월세 포스터" />
+                  </div>
+                  <div class="Set_info">
+                    <div class="Set_title">작은 유령의 월세</div>
+                    <span class="Set_author">작가명5</span>
+                    <span class="Set_discount">세트 소장 25% 할인</span>
+                  </div>
+                </li>
+              </ul>
+
+              <button class="SetList_nxt_btn" type="button">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </section>
+
+        </section>
+
+        <aside class="content_rigt">
+          <div class="real_time_rank"></div>
+          <div class="real_time_rank_new"></div>
+          <a class="banner">
+            <img src="./images/fictional_ad_banners/밤책방_300x250.png" alt="광고 배너"/>
+          </a>
+        </aside>
+      </div>
+
+
+    </main>
+    <footer>
+      <ul class="footer_btn_banner">
+        <li>
+          <img
+            src="./images/Naver_banners_290x130/창작자_모집.png"
+            alt="네웹 창작자 모집"
+          />
+        </li>
+        <li>
+          <img
+            src="./images/Naver_banners_290x130/광고_문의.png"
+            alt="네웹 광고 문의"
+          />
+        </li>
+        <li>
+          <img
+            src="./images/Naver_banners_290x130/팀원_모집.png"
+            alt="네웹 팀원 모집"
+          />
+        </li>
+        <li>
+          <img
+            src="./images/Naver_banners_290x130/협업_제안.png"
+            alt="네웹 협업 제안"
+          />
+        </li>
+      </ul>
+      <nav class="footer_navi_bar"></nav>
+      <hr />
+
+      <!-- grid 를 위한 구간 3분할! -->
+      <div class="footer_grid_wrap">
+        <section class="footer_terms_left">
+          <ul>
+            <li>
+              <a href="">네이버웹툰 이용약관</a>
+            </li>
+            <li>
+              <span class="footer_bar">|</span>
+              <a href="">전용상품권 이용약관</a>
+            </li>
+            <li>
+              <span class="footer_bar">|</span>
+              <a href="">개인정보처리방침</a>
+            </li>
+            <li>
+              <span class="footer_bar">|</span>
+              <a href="">청소년보호정책</a>
+            </li>
+            <li>
+              <span class="footer_bar">|</span>
+              <a href="">게시물 및 커뮤니티 가이드라인</a>
+            </li>
+            <li>
+              <span class="footer_bar">|</span>
+              <a href="">웹툰 고객센터</a>
+            </li>
+            <li>
+              <span class="footer_bar">|</span>
+              <a href="">광고 문의</a>
+            </li>
+            <li>
+              <span class="footer_bar">|</span>
+              <a href="">사업 문의</a>
+            </li>
+          </ul>
+          <address class="copyright_NaverWebtoon">
+            &copy; NAVER WEBTOON Limited
+          </address>
+        </section>
+        <section class="footer_terms_right">
+          <div>
             <ul>
               <li>
-                <a href="">네이버웹툰 이용약관</a>
-              </li>
-              <li>
-                <span class="footer_bar">|</span>
-                <a href="">전용상품권 이용약관</a>
+                <a href="">이용약관</a>
               </li>
               <li>
                 <span class="footer_bar">|</span>
@@ -251,112 +576,66 @@
               </li>
               <li>
                 <span class="footer_bar">|</span>
-                <a href="">청소년보호정책</a>
+                <a href="">책임의 한계와 법적고지</a>
               </li>
               <li>
                 <span class="footer_bar">|</span>
-                <a href="">게시물 및 커뮤니티 가이드라인</a>
+                <a href="">고객센터</a>
               </li>
               <li>
                 <span class="footer_bar">|</span>
-                <a href="">웹툰 고객센터</a>
+                <a href="">결제도용신고</a>
               </li>
               <li>
                 <span class="footer_bar">|</span>
-                <a href="">광고 문의</a>
-              </li>
-              <li>
-                <span class="footer_bar">|</span>
-                <a href="">사업 문의</a>
+                <a href="">저작권침해신고</a>
               </li>
             </ul>
-            <address class="copyright_NaverWebtoon">
-              © NAVER WEBTOON Limited
-            </address>
-          </section>
-          <section class="footer_terms_right">
-            <div>
-              <ul>
-                <li>
-                  <a href="">이용약관</a>
-                </li>
-                <li>
-                  <span class="footer_bar">|</span>
-                  <a href="">개인정보처리방침</a>
-                </li>
-                <li>
-                  <span class="footer_bar">|</span>
-                  <a href="">책임의 한계와 법적고지</a>
-                </li>
-                <li>
-                  <span class="footer_bar">|</span>
-                  <a href="">고객센터</a>
-                </li>
-                <li>
-                  <span class="footer_bar">|</span>
-                  <a href="">결제도용신고</a>
-                </li>
-                <li>
-                  <span class="footer_bar">|</span>
-                  <a href="">저작권침해신고</a>
-                </li>
-              </ul>
-              <address>© NAVER CORP</address>
-            </div>
-          </section>
-          <div class="footer_company_info">
-            <ul>
-              <li>
-                <a href="">네이버웹툰(유) 대표이사 김준구</a>
-              </li>
-              <li>
-                <span class="footer_bar">|</span>
-                <a href="">사업자등록번호 669-86-01888</a>
-              </li>
-              <li>
-                <span class="footer_bar">|</span>
-                <a href=""
-                  >통신판매업 신고번호 2020-성남분당B-0719 (사업자정보확인)</a
-                >
-              </li>
-            </ul>
+            <address>&copy; NAVER CORP</address>
           </div>
-        </div>
-        <section class="footer_under">
+        </section>
+        <div class="footer_company_info">
           <ul>
             <li>
+              <a href="">네이버웹툰(유) 대표이사 김준구</a>
+            </li>
+            <li>
+              <span class="footer_bar">|</span>
+              <a href="">사업자등록번호 669-86-01888</a>
+            </li>
+            <li>
+              <span class="footer_bar">|</span>
               <a href=""
-                >주소 경기도 성남시 분당구 불정로 6 그린팩토리, 6-10층</a
+                >통신판매업 신고번호 2020-성남분당B-0719 (사업자정보확인)</a
               >
             </li>
-            <li>
-              <span class="footer_bar">|</span>
-              <a href="">고객센터 1588-3820</a>
-            </li>
-            <li>
-              <span class="footer_bar">|</span>
-              <a href="">이메일 ccnaver@naver.com</a>
-            </li>
-            <li>
-              <span class="footer_bar">|</span>
-              <a href="">호스팅 서비스 제공 NAVER Cloud</a>
-            </li>
           </ul>
-          <p>
-            모든 콘텐츠의 저작권은 저작권자 또는 제공처에 있으며, 이를 무단으로
-            이용하는 경우 관련 법령에 따라 법적 책임을 질 수 있습니다.
-          </p>
-        </section>
-      </footer>
-    </body>
-  </html>
-  <!-- 속성 순서는 배치 → 크기·여백 → 글자 → 색상·테두리로 맞췄습니다. 이 순서 자체가 동작을 바꾸지는 않지만, 찾고 수정하기 쉬워집니다.
-
-두 가지는 따로 기억하세요.
-
-- 폰트: 현재 등록한 굵기는 400·600·700입니다. 100·300·900을 지정해도 해당 파일이 없으면 브라우저가 다른 굵기를 대신 사용하거나 합성할 수 있습니다. 정확한 굵기가 필요하면 파일을 추가하세요.
-
-- 반응형: 현재 1190px 고정 너비는 데스크톱 재현 단계입니다. 헤더가 완성되면 좁은 화면 대응을 추가해야 합니다.
-
-지금 확인할 것은 브랜드바 63px, 내비게이션 55px, 검색 아이콘의 오른쪽 정렬, 전체 폭 구분선입니다. -->
-</doctype>
+        </div>
+      </div>
+      <section class="footer_under">
+        <ul>
+          <li>
+            <a href=""
+              >주소 경기도 성남시 분당구 불정로 6 그린팩토리, 6-10층</a
+            >
+          </li>
+          <li>
+            <span class="footer_bar">|</span>
+            <a href="">고객센터 1588-3820</a>
+          </li>
+          <li>
+            <span class="footer_bar">|</span>
+            <a href="">이메일 ccnaver@naver.com</a>
+          </li>
+          <li>
+            <span class="footer_bar">|</span>
+            <a href="">호스팅 서비스 제공 NAVER Cloud</a>
+          </li>
+        <p>
+          모든 콘텐츠의 저작권은 저작권자 또는 제공처에 있으며, 이를 무단으로
+          이용하는 경우 관련 법령에 따라 법적 책임을 질 수 있습니다.
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>
