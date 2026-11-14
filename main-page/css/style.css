@@ -262,7 +262,7 @@ header > hr {
    ======================================== */
 .DailyList_wrap,
 .GenreList_wrap,
-.UpdatesList_wrqp,
+.UpdatesList_wrap,
 .SetList_wrap {
   /* 다음 버튼의 위치 기준 */
   position: relative;
@@ -573,8 +573,13 @@ footer li {
   white-space: nowrap;
 }
 /* 기존 40px 원형 버튼 스타일을 공유하고 위치만 다르게 */
-.GenreList_nxt_btn {
+.GenreList_nxt_btn,
+.UpdatesList_nxt_btn {
   top: 84px;
+}
+/* 세트 포스터 높이 227px 기준 가운데 */
+.SetList_nxt_btn {
+  top: 94px;
 }
 /* 랭킹 숫자는 hover 애니메이션 대상에서 제외 */
 .GenreList .Genre_rank:hover {
