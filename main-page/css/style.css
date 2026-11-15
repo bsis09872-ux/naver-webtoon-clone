@@ -717,16 +717,12 @@ header {
   gap: 16px;
   margin-top: 20px;
 }
-/* QR 이미지 자리 (이미지 파일이 생기면 img 로 교체) */
+/* 앱 설치 QR 코드 */
 .app_qr {
-  display: flex;
   flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
   width: 90px;
   height: 90px;
-  font-size: 80px;
-  line-height: 1;
+  object-fit: contain;
 }
 .store_links {
   display: flex;
