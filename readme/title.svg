@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="150" viewBox="0 0 720 150" role="img" aria-label="네이버 웹툰 메인 페이지 클론 코딩">
+  <style>
+    .t { font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; font-weight: 800; }
+    .brand { fill: #00dc64; font-size: 56px; letter-spacing: -1px; }
+    .sub { fill: #7d8590; font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+  </style>
+  <text class="t brand" x="360" y="70" text-anchor="middle">네이버 웹툰</text>
+  <text class="t sub" x="360" y="122" text-anchor="middle">메인 페이지 클론 코딩</text>
+</svg>
