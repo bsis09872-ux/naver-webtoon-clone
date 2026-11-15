@@ -7,11 +7,12 @@
      5. 필터 목록      .filter_list .filter_btn
      6. 캐러셀         .carousel .carousel_btn
      7. 포스터 목록    .poster_list (+ 크기 poster_lg / poster_md / poster_tall)
-     8. 작품 카드      .poster_card .poster .card_info ...
-     9. 뱃지          .badge_up .rank_badge
+     8. 작품 카드      .poster_card .poster .card_info .card_desc .card_stats .tag_list
+     9. 뱃지          .badge_up .rank_badge .badge_new .badge_promote .thumb_label
      10. 배너         .banner .banner_wide
-   11. 섹션별 차이   (공통 컴포넌트로 표현 못 하는 부분만)
-   12~. 푸터
+   11. 섹션별 차이   매일+ 툴팁, 이달의 신작 · 베스트도전 배치
+   12. 오른쪽 aside  랭킹 · 배너 · 공지사항 · 앱 설치 안내
+   13. 푸터         Grid 영역(grid-template-areas) 배치
    ======================================== */
 
 /* ========================================
@@ -347,6 +348,8 @@ header {
 }
 /* 포스터 틀: 넘치는 부분을 잘라 hover 확대 효과를 가둠 */
 .poster {
+  /* 신작 · 베스트도전 라벨을 포스터 위에 겹치는 기준 */
+  position: relative;
   width: var(--poster-w, 160px);
   height: var(--poster-h, 207px);
   overflow: hidden;
@@ -394,6 +397,46 @@ header {
   color: var(--color-primary);
 }
 
+/* 작품 설명: 2줄까지만 보이고 말줄임 */
+.card_desc {
+  display: -webkit-box;
+  margin-top: 4px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: var(--font-size-sub);
+  color: var(--color-text-soft);
+}
+.card_desc.is_3lines {
+  -webkit-line-clamp: 3;
+}
+/* 별점 · 조회수 */
+.card_stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--color-text-soft);
+}
+.card_stats i {
+  margin-right: 3px;
+}
+/* 해시태그 목록 (나중에 '웹툰 바로가기'에도 재사용 가능) */
+.tag_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 13px;
+  color: var(--color-text-soft);
+  background: var(--color-background-soft);
+  border-radius: var(--radius);
+}
+
 /* ========================================
    9. 뱃지
    ======================================== */
@@ -423,6 +466,48 @@ header {
   pointer-events: none;
 }
 
+/* 포스터 왼쪽 위 초록 원형 '신작' */
+.badge_new {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+/* 포스터 왼쪽 위 초록 '베도 승격' */
+.badge_promote {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  padding: 4px 5px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: 0 0 4px 4px;
+}
+/* 썸네일 왼쪽 위 '베스트도전 / 도전만화' 라벨 */
+.thumb_label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2px 6px;
+  font-size: 10px;
+  color: var(--color-white);
+  background: rgb(0 0 0 / 60%);
+  border-radius: 0 0 4px 0;
+}
+
 /* ========================================
    10. 배너
    ======================================== */
@@ -450,67 +535,256 @@ header {
   color: var(--color-primary);
 }
 
+/* 이달의 신작: 가로형 카드 3개 */
+.monthly_list {
+  --poster-w: 100%;
+  --poster-h: 160px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+/* 베스트도전: 왼쪽 큰 카드 1개 | 오른쪽 추천 목록 */
+.challenge_row {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 40px;
+}
+.challenge_feature {
+  --poster-w: 100%;
+  --poster-h: 180px;
+}
+/* 추천 목록: 2열 × 3행, 각 항목은 썸네일 | 정보 */
+.challenge_list {
+  --poster-w: 110px;
+  --poster-h: 90px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+}
+.challenge_item {
+  display: grid;
+  grid-template-columns: var(--poster-w) minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+}
+.challenge_item .card_info {
+  margin-top: 0;
+}
+
 /* ========================================
-   12. 푸터 전체
+   12. 오른쪽 aside
+   - 머리말은 4번(.section_head) · 필터는 5번(.filter_list) 재사용
    ======================================== */
-footer {
-  height: 421px;
-  margin-top: 45px;
+/* 머리말 아래 구분선 (aside 머리말 공통) */
+.section_head.has_line {
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-line-primary);
+}
+/* 12-1. 실시간 랭킹 목록: 썸네일 | 순위 | 제목 · 작가 */
+.rank_list {
+  /* 썸네일은 8번 .poster 를 그대로 쓰고 크기 변수만 지정 */
+  --poster-w: 64px;
+  --poster-h: 85px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.rank_item {
+  display: grid;
+  grid-template-columns: var(--poster-w) 28px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+.rank_num {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+.rank_item .card_info {
+  margin-top: 0;
+}
+/* 12-2. 작가 모집 배너 */
+.aside_banners {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.banner img {
+  width: 100%;
+}
+/* 12-3. 공지사항 */
+.notice_list li {
+  position: relative;
+  padding-left: 10px;
+  font-size: var(--font-size-sub);
+  line-height: 2.1;
+  /* 긴 제목은 한 줄 말줄임 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 앞쪽 작은 점 */
+.notice_list li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: var(--color-text-soft);
+}
+/* 12-4. 앱 설치 안내 */
+.app_guide_desc {
+  margin-top: 10px;
+  font-size: var(--font-size-sub);
+  color: var(--color-text-soft);
+}
+.app_guide_desc strong {
+  font-weight: 400;
+  color: var(--color-primary);
+}
+.app_guide_download {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+/* QR 이미지 자리 (이미지 파일이 생기면 img 로 교체) */
+.app_qr {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  font-size: 80px;
+  line-height: 1;
+}
+.store_links {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+}
+.store_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  font-size: 13px;
+  border: 1px solid var(--color-line-primary);
+  border-radius: var(--radius);
+}
+
+/* ========================================
+   13. 푸터 — Grid 배치
+   ┌──────────────── banner ────────────────┐
+   ├──────────────── nav ───────────────────┤
+   │ terms_left        │ terms_right        │
+   ├──────────────── company ───────────────┤
+   └──────────────── notice ────────────────┘
+   ======================================== */
+.footer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "banner  banner"
+    "nav     nav"
+    "terms_l terms_r"
+    "company company"
+    "notice  notice";
+  margin-top: 60px;
   margin-bottom: 90px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--color-text-soft);
+}
+.footer_btn_banner   { grid-area: banner; }
+.footer_navi_bar     { grid-area: nav; }
+.footer_terms_left   { grid-area: terms_l; }
+.footer_terms_right  { grid-area: terms_r; }
+.footer_company_info { grid-area: company; }
+.footer_notice       { grid-area: notice; }
+
+/* 1행: 배너 4개를 같은 너비로 */
+.footer_btn_banner {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.footer_btn_banner .banner {
+  border: 1px solid var(--color-background-soft);
+}
+/* 2행: 서비스 바로가기 · 고객센터 */
+.footer_navi_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-line-primary);
+}
+.footer_services {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+}
+.footer_services a,
+.footer_help {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.footer_services_sub {
+  margin-left: 4px;
   font-size: 13px;
   color: var(--color-text-soft);
 }
-footer li {
-  line-height: 19px;
-}
-/* 푸터 이미지 배너 */
-.footer_btn_banner {
-  display: flex;
-  justify-content: space-around;
-}
-
-/* ========================================
-   13. 푸터 Grid 배치
-   첫째 행: 왼쪽 약관 | 오른쪽 약관
-   둘째 행: 회사 정보가 두 열을 모두 차지
-   ======================================== */
-.footer_grid_wrap {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px 30px;
+/* 3행: 약관 두 묶음 + 가운데 세로 구분선 */
+.footer_terms_left,
+.footer_terms_right {
+  padding-top: 24px;
 }
 .footer_terms_left {
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
+  padding-right: 30px;
+  border-right: 1px solid var(--color-line-primary);
 }
 .footer_terms_right {
-  grid-row: 1 / 2;
-  grid-column: 2 / 3;
+  padding-left: 30px;
 }
+.footer_terms strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+/* 4행: 사업자 정보 */
 .footer_company_info {
-  display: flex;
-  flex-direction: column;
-  grid-row: 2 / 3;
-  grid-column: 1 / 3;
+  margin-top: 40px;
+  font-style: normal;
+}
+/* 5행: 저작권 안내 */
+.footer_notice {
+  margin-top: 30px;
 }
 
-/* ========================================
-   14. 푸터 약관 · 저작권 · 회사 정보
-   ======================================== */
-/* 약관 링크 목록 가로 배치 */
-.footer_terms_left ul,
-.footer_terms_right ul {
+/* 약관 · 사업자 정보 목록: 가로 나열 + 항목 사이 세로 막대
+   - 모든 항목 앞에 막대를 그리고, 목록을 막대 폭(21px)만큼 왼쪽으로 당긴 뒤
+     그 21px을 clip-path로 잘라낸다.
+     → 줄이 바뀌어도 각 줄 맨 앞 막대는 보이지 않음 */
+.footer_terms,
+.footer_info_list {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 8px;
+  margin-left: -21px;
+  clip-path: inset(0 0 0 21px);
 }
-.copyright_NaverWebtoon {
-  padding: 4px 5px 0 0;
-}
-/* 회사 정보 · 하단 주소 목록 가로 배치 */
-.footer_company_info ul,
-.footer_under ul {
-  display: flex;
-  justify-content: space-around;
-  text-align: left;
+.footer_terms li::before,
+.footer_info_list li::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  margin: 0 10px;
+  background: var(--color-line-primary);
 }

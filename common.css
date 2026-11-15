@@ -88,9 +88,14 @@ button {
 }
 
 /* 공통 양식 */
+:root {
+    color-scheme: light; /* 다크 모드 브라우저에서도 밝은 화면으로 고정 */
+}
+
 body {
     font-family: var(--font-family);
     color: var(--color-text);
+    background-color: var(--color-white);
 }
 
 input, button, select, textarea {
