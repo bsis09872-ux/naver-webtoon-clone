@@ -19,48 +19,65 @@
   </head>
   <body>
     <header>
-      <div class="Header_BrandBar">
-        <h1 class="BrandBar_left">
-          <a href="https://www.naver.com/">
-            <img src="./images/Logotype/Logotype_Black.svg" alt="네이버" />
-          </a>
-          <a href="https://comic.naver.com/index">
-            <span class="webtoon_page">웹툰</span>
-          </a>
-          <span class="BrandBar_bar">|</span>
-          <a
-            class="BrandBar_link"
-            target="_blank"
-            href="https://novel.naver.com/"
-          >
-            <span>웹소설</span>
-          </a>
-          <span class="BrandBar_bar">|</span>
-          <a
-            class="BrandBar_link"
-            target="_blank"
-            href="https://series.naver.com/comic/home.series"
-          >
-            <span>시리즈</span>
-          </a>
-        </h1>
-        <div class="BrandBar_right">
-          <div class="SearchBox">
-            <input placeholder="제목/작가로 검색할 수 있습니다." />
-            <button type="button">
-              <i class="fa-brands fa-sistrix"> </i>
-            </button>
+      <div class="Header_top">
+        <div class="Header_BrandBar">
+          <div class="BrandBar_left">
+            <h1>
+              <a href="https://www.naver.com/">
+                <img src="./images/Logotype/Logotype_Black.svg" alt="네이버" />
+              </a>
+              <a href="https://comic.naver.com/index">
+                <span class="webtoon_page">웹툰</span>
+              </a>
+            </h1>
+            <nav aria-label="네이버 콘텐츠 서비스">
+              <ul class="BrandBar_services">
+                <li>
+                  <a
+                    class="BrandBar_link"
+                    target="_blank"
+                    href="https://novel.naver.com/"
+                    >웹소설</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="BrandBar_link"
+                    target="_blank"
+                    href="https://series.naver.com/comic/home.series"
+                    >시리즈</a
+                  >
+                </li>
+              </ul>
+            </nav>
           </div>
-          <div class="Login_Service_btns">
-            <button type="button" class="NaverLogin_btn">로그인</button>
-            <button type="button" class="service_menu_btn">
-              <i class="fa-solid fa-grip"> </i>
-            </button>
+          <div class="BrandBar_right">
+            <form class="SearchBox" role="search" action="#">
+              <label for="search_keyword" class="sr-only">작품 검색</label>
+              <input
+                id="search_keyword"
+                type="search"
+                name="keyword"
+                placeholder="제목/작가로 검색할 수 있습니다."
+              />
+              <button type="submit" aria-label="검색">
+                <i aria-hidden="true" class="fa-brands fa-sistrix"></i>
+              </button>
+            </form>
+            <div class="Login_Service_btns">
+              <button type="button" class="NaverLogin_btn">로그인</button>
+              <button
+                type="button"
+                class="service_menu_btn"
+                aria-label="네이버 서비스 전체 보기"
+              >
+                <i aria-hidden="true" class="fa-solid fa-grip"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <hr />
-      <nav class="Header_NaviBar">
+      <nav class="Header_NaviBar" aria-label="웹툰 메뉴">
         <ul>
           <li class="navi_home">
             <a href="https://comic.naver.com/index">홈</a>
@@ -86,30 +103,30 @@
         </ul>
         <button type="button" class="Creators_btn">CREATOR'S</button>
       </nav>
-      <hr />
     </header>
     <main class="container">
+      <section class="Daily_section">
       <div class="HomeView_Daily">
         <div class="Daily_Head">
           <h2>화요웹툰</h2>
-          <div class="filters">
-            <div class="first">
-              <button type="button" class="on">인기순</button>
-            </div>
-            <div>
-              <button type="button">업데이트순</button>
-            </div>
-            <div>
-              <button type="button">조회순</button>
-            </div>
-            <div>
-              <button type="button">별점순</button>
-            </div>
-          </div>
+          <ul class="filters" aria-label="정렬 기준">
+            <li class="first">
+              <button type="button" class="on" aria-pressed="true">인기순</button>
+            </li>
+            <li>
+              <button type="button" aria-pressed="false">업데이트순</button>
+            </li>
+            <li>
+              <button type="button" aria-pressed="false">조회순</button>
+            </li>
+            <li>
+              <button type="button" aria-pressed="false">별점순</button>
+            </li>
+          </ul>
         </div>
         <a href="https://comic.naver.com/webtoon?tab=tue">
           <span>화요웹툰 전체보기</span>
-          <i class="fa-solid fa-chevron-right"> </i>
+          <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
         </a>
       </div>
       <div class="DailyList_wrap">
@@ -126,7 +143,7 @@
                 <span class="updated_badge">up</span>
                 <span>별빛 우체국</span>
               </div>
-              <a href="작가페이지">작가명1</a>
+              <a href="#">작가명1</a>
             </div>
           </li>
           <li>
@@ -141,7 +158,7 @@
                 <span class="updated_badge">up</span>
                 <span>월요일의 고백</span>
               </div>
-              <a href="작가페이지">작가명2</a>
+              <a href="#">작가명2</a>
             </div>
           </li>
           <li>
@@ -156,7 +173,7 @@
                 <span class="updated_badge">up</span>
                 <span>검은 달의 기사</span>
               </div>
-              <a href="작가페이지">작가명3</a>
+              <a href="#">작가명3</a>
             </div>
           </li>
           <li>
@@ -171,7 +188,7 @@
                 <span class="updated_badge">up</span>
                 <span>고양이 사장님</span>
               </div>
-              <a href="작가페이지">작가명4</a>
+              <a href="#">작가명4</a>
             </div>
           </li>
           <li>
@@ -186,68 +203,70 @@
                 <span class="updated_badge">up</span>
                 <span>마지막 열차</span>
               </div>
-              <a href="작가페이지">작가명5</a>
+              <a href="#">작가명5</a>
             </div>
           </li>
         </ul>
-        <button type="button" class="DailyList_nxt_btn">
-          <i class="fa-solid fa-chevron-right"> </i>
+        <button type="button" class="DailyList_nxt_btn" aria-label="화요웹툰 다음 작품 보기">
+          <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
         </button>
       </div>
-      <a class="banner_horizon banner">
+      </section>
+      <a class="banner_horizon banner" href="#">
         <img
           src="./images/fictional_ad_banners/밤책방_1190x100.png"
-          alt="가로형 광고 배너"
+          alt="밤책방 광고: 오늘의 끝, 한 페이지"
         />
       </a>
 
 
       <div class="content_wrap">
 
-        <section class="content_left">
-          <div class="HomeView_Hot_Genre ">
+        <div class="content_left">
+          <section class="Genre_section">
+          <div class="HomeView_Hot_Genre">
             <div class="Hot_Genre_Head">
               <h2>
               가장 핫한
               <span>감성</span>
               웹툰만 모아봤어요!
               </h2>
-              <div class="filters">
-                <div class="first">
-                  <button type="button">로맨스</button>
-                </div>
-                <div>
-                  <button type="button">판타지</button>
-                </div>
-                <div>
-                  <button type="button">액션</button>
-                </div>
-                <div>
-                  <button type="button">일상</button>
-                </div>
-                <div>
-                  <button type="button">스릴러</button>
-                </div>
-                <div>
-                  <button type="button">개그</button>
-                </div>
-                <div>
-                  <button type="button">무협/사극</button>
-                </div>
-                <div>
-                  <button type="button">드라마</button>
-                </div>
-                <div>
-                  <button type="button" class="on">감성</button>
-                </div>
-                <div>
-                  <button type="button">스포츠</button>
-                </div>
-              </div>
+              <ul class="filters" aria-label="장르">
+                <li class="first">
+                  <button type="button" aria-pressed="false">로맨스</button>
+                </li>
+                <li>
+                  <button type="button" aria-pressed="false">판타지</button>
+                </li>
+                <li>
+                  <button type="button" aria-pressed="false">액션</button>
+                </li>
+                <li>
+                  <button type="button" aria-pressed="false">일상</button>
+                </li>
+                <li>
+                  <button type="button" aria-pressed="false">스릴러</button>
+                </li>
+                <li>
+                  <button type="button" aria-pressed="false">개그</button>
+                </li>
+                <li>
+                  <button type="button" aria-pressed="false">무협/사극</button>
+                </li>
+                <li>
+                  <button type="button" aria-pressed="false">드라마</button>
+                </li>
+                <li>
+                  <button type="button" class="on" aria-pressed="true">감성</button>
+                </li>
+                <li>
+                  <button type="button" aria-pressed="false">스포츠</button>
+                </li>
+              </ul>
             </div>
             <a href="https://comic.naver.com/webtoon?tab=genre&genre=SENSIBILITY">
               <span>감성웹툰 더보기</span>
-              <i class="fa-solid fa-chevron-right"> </i>
+              <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
             </a>
           </div>
           <div class="GenreList_wrap">
@@ -307,10 +326,11 @@
                 </div>
               </li>
             </ul>
-            <button type="button" class="DailyList_nxt_btn GenreList_nxt_btn">
-              <i class="fa-solid fa-chevron-right"> </i>
+            <button type="button" class="DailyList_nxt_btn GenreList_nxt_btn" aria-label="감성웹툰 다음 작품 보기">
+              <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
             </button>
           </div>
+          </section>
           <!-- 따끈따끈 업데이트 매일+ -->
           <section class="HomeView_Updates">
             <div class="Updates_Head">
@@ -322,15 +342,15 @@
                     앱에서는 매일+ 작품의
                     <strong>무료대여권 매일 지급!</strong>
                   </span>
-                  <button class="Updates_tooltip_close" type="button">
-                    <i class="fa-solid fa-xmark"></i>
+                  <button class="Updates_tooltip_close" type="button" aria-label="안내 닫기">
+                    <i aria-hidden="true" class="fa-solid fa-xmark"></i>
                   </button>
                 </div>
               </div>
 
               <a class="Updates_more" href="#">
                 <span>매일+ 웹툰 더보기</span>
-                <i class="fa-solid fa-chevron-right"></i>
+                <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
               </a>
             </div>
 
@@ -402,8 +422,8 @@
                 </li>
               </ul>
 
-              <button class="DailyList_nxt_btn UpdatesList_nxt_btn" type="button">
-                <i class="fa-solid fa-chevron-right"></i>
+              <button class="DailyList_nxt_btn UpdatesList_nxt_btn" type="button" aria-label="매일+ 웹툰 다음 작품 보기">
+                <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
               </button>
             </div>
           </section>
@@ -413,7 +433,7 @@
               <h2>웹툰 세트 할인</h2>
               <a class="Set_more" href="#">
                 <span>추천 만화 더보기</span>
-                <i class="fa-solid fa-chevron-right"></i>
+                <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
               </a>
             </div>
 
@@ -475,19 +495,19 @@
                 </li>
               </ul>
 
-              <button class="DailyList_nxt_btn SetList_nxt_btn" type="button">
-                <i class="fa-solid fa-chevron-right"></i>
+              <button class="DailyList_nxt_btn SetList_nxt_btn" type="button" aria-label="세트 할인 다음 작품 보기">
+                <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
               </button>
             </div>
           </section>
 
-        </section>
+        </div>
 
         <aside class="content_right">
-          <div class="real_time_rank"></div>
-          <div class="real_time_rank_new"></div>
-          <a class="banner">
-            <img src="./images/fictional_ad_banners/밤책방_300x250.png" alt="광고 배너"/>
+          <!-- TODO: 실시간 랭킹 (real_time_rank) -->
+          <!-- TODO: 신작 실시간 랭킹 (real_time_rank_new) -->
+          <a class="banner" href="#">
+            <img src="./images/fictional_ad_banners/밤책방_300x250.png" alt="밤책방 광고"/>
           </a>
         </aside>
       </div>
@@ -521,7 +541,7 @@
           />
         </li>
       </ul>
-      <nav class="footer_navi_bar"></nav>
+      <!-- TODO: 푸터 내비게이션 (footer_navi_bar) -->
       <hr />
 
       <!-- grid 를 위한 구간 3분할! -->
@@ -529,35 +549,35 @@
         <section class="footer_terms_left">
           <ul>
             <li>
-              <a href="">네이버웹툰 이용약관</a>
+              <a href="#">네이버웹툰 이용약관</a>
             </li>
             <li>
               <span class="footer_bar">|</span>
-              <a href="">전용상품권 이용약관</a>
+              <a href="#">전용상품권 이용약관</a>
             </li>
             <li>
               <span class="footer_bar">|</span>
-              <a href="">개인정보처리방침</a>
+              <a href="#">개인정보처리방침</a>
             </li>
             <li>
               <span class="footer_bar">|</span>
-              <a href="">청소년보호정책</a>
+              <a href="#">청소년보호정책</a>
             </li>
             <li>
               <span class="footer_bar">|</span>
-              <a href="">게시물 및 커뮤니티 가이드라인</a>
+              <a href="#">게시물 및 커뮤니티 가이드라인</a>
             </li>
             <li>
               <span class="footer_bar">|</span>
-              <a href="">웹툰 고객센터</a>
+              <a href="#">웹툰 고객센터</a>
             </li>
             <li>
               <span class="footer_bar">|</span>
-              <a href="">광고 문의</a>
+              <a href="#">광고 문의</a>
             </li>
             <li>
               <span class="footer_bar">|</span>
-              <a href="">사업 문의</a>
+              <a href="#">사업 문의</a>
             </li>
           </ul>
           <address class="copyright_NaverWebtoon">
@@ -568,27 +588,27 @@
           <div>
             <ul>
               <li>
-                <a href="">이용약관</a>
+                <a href="#">이용약관</a>
               </li>
               <li>
                 <span class="footer_bar">|</span>
-                <a href="">개인정보처리방침</a>
+                <a href="#">개인정보처리방침</a>
               </li>
               <li>
                 <span class="footer_bar">|</span>
-                <a href="">책임의 한계와 법적고지</a>
+                <a href="#">책임의 한계와 법적고지</a>
               </li>
               <li>
                 <span class="footer_bar">|</span>
-                <a href="">고객센터</a>
+                <a href="#">고객센터</a>
               </li>
               <li>
                 <span class="footer_bar">|</span>
-                <a href="">결제도용신고</a>
+                <a href="#">결제도용신고</a>
               </li>
               <li>
                 <span class="footer_bar">|</span>
-                <a href="">저작권침해신고</a>
+                <a href="#">저작권침해신고</a>
               </li>
             </ul>
             <address>&copy; NAVER CORP</address>
@@ -597,15 +617,15 @@
         <div class="footer_company_info">
           <ul>
             <li>
-              <a href="">네이버웹툰(유) 대표이사 김준구</a>
+              <a href="#">네이버웹툰(유) 대표이사 김준구</a>
             </li>
             <li>
               <span class="footer_bar">|</span>
-              <a href="">사업자등록번호 669-86-01888</a>
+              <a href="#">사업자등록번호 669-86-01888</a>
             </li>
             <li>
               <span class="footer_bar">|</span>
-              <a href=""
+              <a href="#"
                 >통신판매업 신고번호 2020-성남분당B-0719 (사업자정보확인)</a
               >
             </li>
@@ -615,21 +635,21 @@
       <section class="footer_under">
         <ul>
           <li>
-            <a href=""
+            <a href="#"
               >주소 경기도 성남시 분당구 불정로 6 그린팩토리, 6-10층</a
             >
           </li>
           <li>
             <span class="footer_bar">|</span>
-            <a href="">고객센터 1588-3820</a>
+            <a href="#">고객센터 1588-3820</a>
           </li>
           <li>
             <span class="footer_bar">|</span>
-            <a href="">이메일 ccnaver@naver.com</a>
+            <a href="#">이메일 ccnaver@naver.com</a>
           </li>
           <li>
             <span class="footer_bar">|</span>
-            <a href="">호스팅 서비스 제공 NAVER Cloud</a>
+            <a href="#">호스팅 서비스 제공 NAVER Cloud</a>
           </li>
         </ul>
         <p>

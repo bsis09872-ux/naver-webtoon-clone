@@ -16,15 +16,12 @@ header {
   display: flex;
   flex-direction: column;
   min-height: 120px;
+  /* 화면 전체 폭을 채우는 아래 구분선 (기존 hr 대체) */
+  border-bottom: 1px solid var(--color-line-primary);
 }
-/* 화면 전체 폭을 채우는 구분선 */
-header > hr {
-  flex-shrink: 0;
-  width: 100%;
-  height: 1px;
-  margin: 0;
-  border: 0;
-  background-color: var(--color-line-primary);
+/* 브랜드바 아래 전체 폭 구분선 (기존 hr 대체) */
+.Header_top {
+  border-bottom: 1px solid var(--color-line-primary);
 }
 /* ========================================
    2. 상단 브랜드바
@@ -41,6 +38,30 @@ header > hr {
   align-items: center;
   gap: 10px;
 }
+.BrandBar_left h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: inherit;
+}
+/* 웹소설 · 시리즈 서비스 링크 목록 */
+.BrandBar_services {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* 첫 항목 포함 각 링크 앞에 구분선 표시 (기존 BrandBar_bar span 대체) */
+.BrandBar_services li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.BrandBar_services li::before {
+  content: "|";
+  font-size: 16px;
+  font-weight: 100;
+  color: var(--color-line-primary);
+}
 .BrandBar_left img {
   width: 60px;
   height: 12px;
@@ -50,11 +71,6 @@ header > hr {
   font-size: 24px;
   font-weight: 900;
   color: var(--color-text);
-}
-.BrandBar_bar {
-  font-size: 16px;
-  font-weight: 100;
-  color: var(--color-line-primary);
 }
 .BrandBar_left .BrandBar_link {
   font-size: 20px;
@@ -229,20 +245,20 @@ header > hr {
 .Hot_Genre_Head .filters {
   display: flex;
 }
-.Daily_Head .filters > div,
-.Hot_Genre_Head .filters > div {
+.Daily_Head .filters > li,
+.Hot_Genre_Head .filters > li {
   position: relative;
   padding: 0 8px;
 }
-.Daily_Head .filters > div:first-of-type {
+.Daily_Head .filters > li:first-of-type {
   margin-left: 10px;
 }
-.Hot_Genre_Head .filters > div:first-of-type {
+.Hot_Genre_Head .filters > li:first-of-type {
   margin-left: 0;
 }
 /* 첫 항목을 제외한 필터 앞에 구분점 표시 */
-.Daily_Head .filters > div:not(.first)::after,
-.Hot_Genre_Head .filters > div:not(.first)::after {
+.Daily_Head .filters > li:not(.first)::after,
+.Hot_Genre_Head .filters > li:not(.first)::after {
   content: "";
   position: absolute;
   top: calc(50% - 2px);
