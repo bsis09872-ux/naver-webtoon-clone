@@ -102,6 +102,11 @@ input, button, select, textarea {
     font: inherit;
 }
 
+/* hidden 속성을 단 요소는 다른 display 규칙보다 우선해서 숨김 */
+[hidden] {
+    display: none !important;
+}
+
 /* 화면에서는 숨기고 스크린리더에만 읽히게 하는 클래스 */
 .sr-only {
     position: absolute;

@@ -451,6 +451,20 @@ header {
   background: var(--color-background-soft);
   border-radius: var(--radius);
 }
+/* 큰 태그 (웹툰 바로가기) — .tag_list 에 .tag_list_lg 만 추가 */
+.tag_list_lg {
+  gap: 10px;
+  margin-top: 0;
+}
+.tag_list_lg .tag {
+  padding: 8px 16px;
+  font-size: var(--font-size-body);
+  font-weight: 600;
+  color: #555;
+}
+.tag_list_lg .tag:hover {
+  color: var(--color-primary);
+}
 
 /* ========================================
    9. 뱃지
@@ -652,7 +666,12 @@ header {
 .rank_item .card_info {
   margin-top: 0;
 }
-/* 12-2. 작가 모집 배너 */
+/* 12-2. 광고 + 작가 모집 배너 묶음 */
+.aside_ads {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+}
 .aside_banners {
   display: flex;
   flex-direction: column;
@@ -968,6 +987,25 @@ header {
   }
   .challenge_list {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* aside 배너 3개: 광고(왼쪽) | 작가 모집 2개 세로(오른쪽) 로 작게 */
+  .aside_ads {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 10px;
+  }
+  .aside_banners {
+    gap: 8px;
+  }
+  /* 웹툰 바로가기 태그 작게 */
+  .tag_list_lg {
+    gap: 8px;
+  }
+  .tag_list_lg .tag {
+    padding: 6px 12px;
+    font-size: 13px;
   }
 
   /* 푸터: Grid 영역을 한 줄씩 쌓기 */
