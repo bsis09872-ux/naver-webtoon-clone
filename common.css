@@ -31,6 +31,20 @@
     "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic",
     "돋움", Dotum, sans-serif;
     --color-focus: rgb(16, 16, 235);
+    --color-badge: #ff4141;
+    --color-white: #fff;
+
+    /* 레이아웃 */
+    --layout-width: 1190px;   /* 페이지 최대 너비 */
+    --aside-width: 300px;     /* 오른쪽 aside 너비 */
+    --column-gap: 50px;       /* 본문 · aside 사이 */
+    --section-gap: 40px;      /* 섹션 사이 세로 간격 */
+
+    /* 모양 · 글자 크기 */
+    --radius: 4px;
+    --font-size-title: 20px;  /* 섹션 제목 */
+    --font-size-body: 15px;   /* 작품 제목 */
+    --font-size-sub: 14px;    /* 작가명 · 더보기 · 필터 */
 }
 
 

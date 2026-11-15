@@ -20,7 +20,7 @@
   <body>
     <header>
       <div class="Header_top">
-        <div class="Header_BrandBar">
+        <div class="Header_BrandBar inner">
           <div class="BrandBar_left">
             <h1>
               <a href="https://www.naver.com/">
@@ -77,7 +77,7 @@
           </div>
         </div>
       </div>
-      <nav class="Header_NaviBar" aria-label="웹툰 메뉴">
+      <nav class="Header_NaviBar inner" aria-label="웹툰 메뉴">
         <ul>
           <li class="navi_home">
             <a href="https://comic.naver.com/index">홈</a>
@@ -104,239 +104,224 @@
         <button type="button" class="Creators_btn">CREATOR'S</button>
       </nav>
     </header>
-    <main class="container">
-      <section class="Daily_section">
-      <div class="HomeView_Daily">
-        <div class="Daily_Head">
-          <h2>화요웹툰</h2>
-          <ul class="filters" aria-label="정렬 기준">
-            <li class="first">
-              <button type="button" class="on" aria-pressed="true">인기순</button>
-            </li>
-            <li>
-              <button type="button" aria-pressed="false">업데이트순</button>
-            </li>
-            <li>
-              <button type="button" aria-pressed="false">조회순</button>
-            </li>
-            <li>
-              <button type="button" aria-pressed="false">별점순</button>
-            </li>
-          </ul>
-        </div>
-        <a href="https://comic.naver.com/webtoon?tab=tue">
-          <span>화요웹툰 전체보기</span>
-          <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
-        </a>
-      </div>
-      <div class="DailyList_wrap">
-        <ul class="DailyList">
-          <li>
-            <div class="HomeView_Poster">
-              <img
-                src="./images/webtoon_poster_mockup/01_별빛_우체국.png"
-                alt="별빛 우체국 포스터"
-              />
-            </div>
-            <div class="Daily_info">
-              <div class="Daily_title">
-                <span class="updated_badge">up</span>
-                <span>별빛 우체국</span>
-              </div>
-              <a href="#">작가명1</a>
-            </div>
-          </li>
-          <li>
-            <div class="HomeView_Poster">
-              <img
-                src="./images/webtoon_poster_mockup/02_월요일의_고백.png"
-                alt="월요일의 고백 포스터"
-              />
-            </div>
-            <div class="Daily_info">
-              <div class="Daily_title">
-                <span class="updated_badge">up</span>
-                <span>월요일의 고백</span>
-              </div>
-              <a href="#">작가명2</a>
-            </div>
-          </li>
-          <li>
-            <div class="HomeView_Poster">
-              <img
-                src="./images/webtoon_poster_mockup/03_검은_달의_기사.png"
-                alt="검은 달의 기사 포스터"
-              />
-            </div>
-            <div class="Daily_info">
-              <div class="Daily_title">
-                <span class="updated_badge">up</span>
-                <span>검은 달의 기사</span>
-              </div>
-              <a href="#">작가명3</a>
-            </div>
-          </li>
-          <li>
-            <div class="HomeView_Poster">
-              <img
-                src="./images/webtoon_poster_mockup/04_고양이_사장님.png"
-                alt="고양이 사장님 포스터"
-              />
-            </div>
-            <div class="Daily_info">
-              <div class="Daily_title">
-                <span class="updated_badge">up</span>
-                <span>고양이 사장님</span>
-              </div>
-              <a href="#">작가명4</a>
-            </div>
-          </li>
-          <li>
-            <div class="HomeView_Poster">
-              <img
-                src="./images/webtoon_poster_mockup/05_마지막_열차.png"
-                alt="마지막 열차 포스터"
-              />
-            </div>
-            <div class="Daily_info">
-              <div class="Daily_title">
-                <span class="updated_badge">up</span>
-                <span>마지막 열차</span>
-              </div>
-              <a href="#">작가명5</a>
-            </div>
-          </li>
-        </ul>
-        <button type="button" class="DailyList_nxt_btn" aria-label="화요웹툰 다음 작품 보기">
-          <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
-        </button>
-      </div>
-      </section>
-      <a class="banner_horizon banner" href="#">
-        <img
-          src="./images/fictional_ad_banners/밤책방_1190x100.png"
-          alt="밤책방 광고: 오늘의 끝, 한 페이지"
-        />
-      </a>
-
-
-      <div class="content_wrap">
-
-        <div class="content_left">
-          <section class="Genre_section">
-          <div class="HomeView_Hot_Genre">
-            <div class="Hot_Genre_Head">
-              <h2>
-              가장 핫한
-              <span>감성</span>
-              웹툰만 모아봤어요!
-              </h2>
-              <ul class="filters" aria-label="장르">
-                <li class="first">
-                  <button type="button" aria-pressed="false">로맨스</button>
-                </li>
-                <li>
-                  <button type="button" aria-pressed="false">판타지</button>
-                </li>
-                <li>
-                  <button type="button" aria-pressed="false">액션</button>
-                </li>
-                <li>
-                  <button type="button" aria-pressed="false">일상</button>
-                </li>
-                <li>
-                  <button type="button" aria-pressed="false">스릴러</button>
-                </li>
-                <li>
-                  <button type="button" aria-pressed="false">개그</button>
-                </li>
-                <li>
-                  <button type="button" aria-pressed="false">무협/사극</button>
-                </li>
-                <li>
-                  <button type="button" aria-pressed="false">드라마</button>
-                </li>
-                <li>
-                  <button type="button" class="on" aria-pressed="true">감성</button>
-                </li>
-                <li>
-                  <button type="button" aria-pressed="false">스포츠</button>
-                </li>
-              </ul>
-            </div>
-            <a href="https://comic.naver.com/webtoon?tab=genre&genre=SENSIBILITY">
-              <span>감성웹툰 더보기</span>
-              <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
-            </a>
-          </div>
-          <div class="GenreList_wrap">
-            <ul class="GenreList">
+    <main class="container inner">
+      <!-- 요일 웹툰 -->
+      <section class="home_section">
+        <div class="section_head">
+          <div class="section_head_main">
+            <h2 class="section_title">화요웹툰</h2>
+            <ul class="filter_list" aria-label="정렬 기준">
               <li>
-                <div class="HomeView_Poster">
-                  <img src="./images/webtoon_poster_mockup/06_옥상_정원.png" alt="옥상 정원 포스터" />
-                </div>
-                <img src="./icons/ranking-1.svg" alt="1위" class="Genre_rank" />
-                <div class="Genre_info">
-                  <span class="updated_badge">up</span>
-                  <span>옥상 정원</span>
-                </div>
+                <button type="button" class="filter_btn on" aria-pressed="true">인기순</button>
               </li>
-
               <li>
-                <div class="HomeView_Poster">
-                  <img src="./images/webtoon_poster_mockup/07_시간_수리점.png" alt="시간 수리점 포스터" />
-                </div>
-                <img src="./icons/ranking-2.svg" alt="2위" class="Genre_rank" />
-                <div class="Genre_info">
-                  <span class="updated_badge">up</span>
-                  <span>시간 수리점</span>
-                </div>
+                <button type="button" class="filter_btn" aria-pressed="false">업데이트순</button>
               </li>
-
               <li>
-                <div class="HomeView_Poster">
-                  <img src="./images/webtoon_poster_mockup/08_우리의_여름_경기.png" alt="우리의 여름 경기 포스터" />
-                </div>
-                <img src="./icons/ranking-3.svg" alt="3위" class="Genre_rank" />
-                <div class="Genre_info">
-                  <span class="updated_badge">up</span>
-                  <span>우리의 여름 경기</span>
-                </div>
+                <button type="button" class="filter_btn" aria-pressed="false">조회순</button>
               </li>
-
               <li>
-                <div class="HomeView_Poster">
-                  <img src="./images/webtoon_poster_mockup/09_달토끼의_식탁.png" alt="달토끼의 식탁 포스터" />
-                </div>
-                <img src="./icons/ranking-4.svg" alt="4위" class="Genre_rank" />
-                <div class="Genre_info">
-                  <span class="updated_badge">up</span>
-                  <span>달토끼의 식탁</span>
-                </div>
-              </li>
-
-              <li>
-                <div class="HomeView_Poster">
-                  <img src="./images/webtoon_poster_mockup/10_로그인_다른_세계.png" alt="로그인 다른 세계 포스터" />
-                </div>
-                <img src="./icons/ranking-5.svg" alt="5위" class="Genre_rank" />
-                <div class="Genre_info">
-                  <span class="updated_badge">up</span>
-                  <span>로그인 다른 세계</span>
-                </div>
+                <button type="button" class="filter_btn" aria-pressed="false">별점순</button>
               </li>
             </ul>
-            <button type="button" class="DailyList_nxt_btn GenreList_nxt_btn" aria-label="감성웹툰 다음 작품 보기">
-              <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
-            </button>
           </div>
-          </section>
-          <!-- 따끈따끈 업데이트 매일+ -->
-          <section class="HomeView_Updates">
-            <div class="Updates_Head">
-              <div class="Updates_Head_left">
-                <h2>따끈따끈 업데이트 매일+</h2>
+          <a class="more_link" href="https://comic.naver.com/webtoon?tab=tue">
+            화요웹툰 전체보기
+            <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
+          </a>
+        </div>
+        <div class="carousel poster_lg">
+          <ul class="poster_list">
+            <li class="poster_card">
+              <div class="poster">
+                <img src="./images/webtoon_poster_mockup/01_별빛_우체국.png" alt="별빛 우체국 포스터" />
+              </div>
+              <div class="card_info">
+                <p class="card_title">
+                  <span class="badge_up">UP</span>
+                  <span class="card_title_text">별빛 우체국</span>
+                </p>
+                <a class="card_author" href="#">작가명1</a>
+              </div>
+            </li>
+            <li class="poster_card">
+              <div class="poster">
+                <img src="./images/webtoon_poster_mockup/02_월요일의_고백.png" alt="월요일의 고백 포스터" />
+              </div>
+              <div class="card_info">
+                <p class="card_title">
+                  <span class="badge_up">UP</span>
+                  <span class="card_title_text">월요일의 고백</span>
+                </p>
+                <a class="card_author" href="#">작가명2</a>
+              </div>
+            </li>
+            <li class="poster_card">
+              <div class="poster">
+                <img src="./images/webtoon_poster_mockup/03_검은_달의_기사.png" alt="검은 달의 기사 포스터" />
+              </div>
+              <div class="card_info">
+                <p class="card_title">
+                  <span class="badge_up">UP</span>
+                  <span class="card_title_text">검은 달의 기사</span>
+                </p>
+                <a class="card_author" href="#">작가명3</a>
+              </div>
+            </li>
+            <li class="poster_card">
+              <div class="poster">
+                <img src="./images/webtoon_poster_mockup/04_고양이_사장님.png" alt="고양이 사장님 포스터" />
+              </div>
+              <div class="card_info">
+                <p class="card_title">
+                  <span class="badge_up">UP</span>
+                  <span class="card_title_text">고양이 사장님</span>
+                </p>
+                <a class="card_author" href="#">작가명4</a>
+              </div>
+            </li>
+            <li class="poster_card">
+              <div class="poster">
+                <img src="./images/webtoon_poster_mockup/05_마지막_열차.png" alt="마지막 열차 포스터" />
+              </div>
+              <div class="card_info">
+                <p class="card_title">
+                  <span class="badge_up">UP</span>
+                  <span class="card_title_text">마지막 열차</span>
+                </p>
+                <a class="card_author" href="#">작가명5</a>
+              </div>
+            </li>
+          </ul>
+          <button type="button" class="carousel_btn" aria-label="화요웹툰 다음 작품 보기">
+            <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </section>
 
+      <a class="banner banner_wide" href="#">
+        <img src="./images/fictional_ad_banners/밤책방_1190x100.png" alt="밤책방 광고: 오늘의 끝, 한 페이지" />
+      </a>
+
+      <div class="content_wrap">
+        <div class="content_left">
+          <!-- 가장 핫한 장르 웹툰 -->
+          <section class="home_section">
+            <div class="section_head">
+              <div class="section_head_main is_stacked">
+                <h2 class="section_title">가장 핫한 <strong>감성</strong> 웹툰만 모아봤어요!</h2>
+                <ul class="filter_list" aria-label="장르">
+                  <li>
+                    <button type="button" class="filter_btn" aria-pressed="false">로맨스</button>
+                  </li>
+                  <li>
+                    <button type="button" class="filter_btn" aria-pressed="false">판타지</button>
+                  </li>
+                  <li>
+                    <button type="button" class="filter_btn" aria-pressed="false">액션</button>
+                  </li>
+                  <li>
+                    <button type="button" class="filter_btn" aria-pressed="false">일상</button>
+                  </li>
+                  <li>
+                    <button type="button" class="filter_btn" aria-pressed="false">스릴러</button>
+                  </li>
+                  <li>
+                    <button type="button" class="filter_btn" aria-pressed="false">개그</button>
+                  </li>
+                  <li>
+                    <button type="button" class="filter_btn" aria-pressed="false">무협/사극</button>
+                  </li>
+                  <li>
+                    <button type="button" class="filter_btn" aria-pressed="false">드라마</button>
+                  </li>
+                  <li>
+                    <button type="button" class="filter_btn on" aria-pressed="true">감성</button>
+                  </li>
+                  <li>
+                    <button type="button" class="filter_btn" aria-pressed="false">스포츠</button>
+                  </li>
+                </ul>
+              </div>
+              <a class="more_link" href="https://comic.naver.com/webtoon?tab=genre&amp;genre=SENSIBILITY">
+                감성웹툰 더보기
+                <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+            <div class="carousel poster_md">
+              <ul class="poster_list">
+                <li class="poster_card">
+                  <div class="poster">
+                    <img src="./images/webtoon_poster_mockup/06_옥상_정원.png" alt="옥상 정원 포스터" />
+                  </div>
+                  <img class="rank_badge" src="./icons/ranking-1.svg" alt="1위" />
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="badge_up">UP</span>
+                      <span class="card_title_text">옥상 정원</span>
+                    </p>
+                  </div>
+                </li>
+                <li class="poster_card">
+                  <div class="poster">
+                    <img src="./images/webtoon_poster_mockup/07_시간_수리점.png" alt="시간 수리점 포스터" />
+                  </div>
+                  <img class="rank_badge" src="./icons/ranking-2.svg" alt="2위" />
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="badge_up">UP</span>
+                      <span class="card_title_text">시간 수리점</span>
+                    </p>
+                  </div>
+                </li>
+                <li class="poster_card">
+                  <div class="poster">
+                    <img src="./images/webtoon_poster_mockup/08_우리의_여름_경기.png" alt="우리의 여름 경기 포스터" />
+                  </div>
+                  <img class="rank_badge" src="./icons/ranking-3.svg" alt="3위" />
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="badge_up">UP</span>
+                      <span class="card_title_text">우리의 여름 경기</span>
+                    </p>
+                  </div>
+                </li>
+                <li class="poster_card">
+                  <div class="poster">
+                    <img src="./images/webtoon_poster_mockup/09_달토끼의_식탁.png" alt="달토끼의 식탁 포스터" />
+                  </div>
+                  <img class="rank_badge" src="./icons/ranking-4.svg" alt="4위" />
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="badge_up">UP</span>
+                      <span class="card_title_text">달토끼의 식탁</span>
+                    </p>
+                  </div>
+                </li>
+                <li class="poster_card">
+                  <div class="poster">
+                    <img src="./images/webtoon_poster_mockup/10_로그인_다른_세계.png" alt="로그인 다른 세계 포스터" />
+                  </div>
+                  <img class="rank_badge" src="./icons/ranking-5.svg" alt="5위" />
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="badge_up">UP</span>
+                      <span class="card_title_text">로그인 다른 세계</span>
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <button type="button" class="carousel_btn" aria-label="감성웹툰 다음 작품 보기">
+                <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- 따끈따끈 업데이트 매일+ -->
+          <section class="home_section">
+            <div class="section_head">
+              <div class="section_head_main">
+                <h2 class="section_title">따끈따끈 업데이트 매일+</h2>
                 <div class="Updates_tooltip">
                   <span>
                     앱에서는 매일+ 작품의
@@ -347,174 +332,171 @@
                   </button>
                 </div>
               </div>
-
-              <a class="Updates_more" href="#">
-                <span>매일+ 웹툰 더보기</span>
+              <a class="more_link" href="#">
+                매일+ 웹툰 더보기
                 <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
               </a>
             </div>
-
-            <div class="UpdatesList_wrap">
-              <ul class="UpdatesList">
-                <li>
-                  <div class="HomeView_Poster">
+            <div class="carousel poster_md">
+              <ul class="poster_list">
+                <li class="poster_card">
+                  <div class="poster">
                     <img src="./images/webtoon_poster_mockup/11_편의점_새벽_두_시.png" alt="편의점 새벽 두 시 포스터" />
                   </div>
-                  <div class="Updates_info">
-                    <div class="Updates_title">
-                      <span class="updated_badge">UP</span>
-                      <span>편의점 새벽 두 시</span>
-                    </div>
-                    <span class="Updates_author">작가명1</span>
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="badge_up">UP</span>
+                      <span class="card_title_text">편의점 새벽 두 시</span>
+                    </p>
+                    <span class="card_author">작가명1</span>
                   </div>
                 </li>
-
-                <li>
-                  <div class="HomeView_Poster">
+                <li class="poster_card">
+                  <div class="poster">
                     <img src="./images/webtoon_poster_mockup/12_비_오는_골목.png" alt="비 오는 골목 포스터" />
                   </div>
-                  <div class="Updates_info">
-                    <div class="Updates_title">
-                      <span class="updated_badge">UP</span>
-                      <span>비 오는 골목</span>
-                    </div>
-                    <span class="Updates_author">작가명2</span>
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="badge_up">UP</span>
+                      <span class="card_title_text">비 오는 골목</span>
+                    </p>
+                    <span class="card_author">작가명2</span>
                   </div>
                 </li>
-
-                <li>
-                  <div class="HomeView_Poster">
+                <li class="poster_card">
+                  <div class="poster">
                     <img src="./images/webtoon_poster_mockup/13_우리_집_감자.png" alt="우리 집 감자 포스터" />
                   </div>
-                  <div class="Updates_info">
-                    <div class="Updates_title">
-                      <span class="updated_badge">UP</span>
-                      <span>우리 집 감자</span>
-                    </div>
-                    <span class="Updates_author">작가명3</span>
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="badge_up">UP</span>
+                      <span class="card_title_text">우리 집 감자</span>
+                    </p>
+                    <span class="card_author">작가명3</span>
                   </div>
                 </li>
-
-                <li>
-                  <div class="HomeView_Poster">
+                <li class="poster_card">
+                  <div class="poster">
                     <img src="./images/webtoon_poster_mockup/14_동네_탐정단.png" alt="동네 탐정단 포스터" />
                   </div>
-                  <div class="Updates_info">
-                    <div class="Updates_title">
-                      <span class="updated_badge">UP</span>
-                      <span>동네 탐정단</span>
-                    </div>
-                    <span class="Updates_author">작가명4</span>
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="badge_up">UP</span>
+                      <span class="card_title_text">동네 탐정단</span>
+                    </p>
+                    <span class="card_author">작가명4</span>
                   </div>
                 </li>
-
-                <li>
-                  <div class="HomeView_Poster">
+                <li class="poster_card">
+                  <div class="poster">
                     <img src="./images/webtoon_poster_mockup/15_퇴근_후_한_페이지.png" alt="퇴근 후 한 페이지 포스터" />
                   </div>
-                  <div class="Updates_info">
-                    <div class="Updates_title">
-                      <span class="updated_badge">UP</span>
-                      <span>퇴근 후 한 페이지</span>
-                    </div>
-                    <span class="Updates_author">작가명5</span>
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="badge_up">UP</span>
+                      <span class="card_title_text">퇴근 후 한 페이지</span>
+                    </p>
+                    <span class="card_author">작가명5</span>
                   </div>
                 </li>
               </ul>
-
-              <button class="DailyList_nxt_btn UpdatesList_nxt_btn" type="button" aria-label="매일+ 웹툰 다음 작품 보기">
+              <button type="button" class="carousel_btn" aria-label="매일+ 웹툰 다음 작품 보기">
                 <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
               </button>
             </div>
           </section>
+
           <!-- 웹툰 세트 할인 -->
-          <section class="HomeView_Set">
-            <div class="Set_Head">
-              <h2>웹툰 세트 할인</h2>
-              <a class="Set_more" href="#">
-                <span>추천 만화 더보기</span>
+          <section class="home_section">
+            <div class="section_head">
+              <h2 class="section_title">웹툰 세트 할인</h2>
+              <a class="more_link" href="#">
+                추천 만화 더보기
                 <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
               </a>
             </div>
-
-            <div class="SetList_wrap">
-              <ul class="SetList">
-                <li>
-                  <div class="HomeView_Poster">
+            <div class="carousel poster_tall">
+              <ul class="poster_list">
+                <li class="poster_card">
+                  <div class="poster">
                     <img src="./images/webtoon_poster_mockup/16_오늘도_빵_굽는_중.png" alt="오늘도 빵 굽는 중 포스터" />
                   </div>
-                  <div class="Set_info">
-                    <div class="Set_title">오늘도 빵 굽는 중</div>
-                    <span class="Set_author">작가명1</span>
-                    <span class="Set_discount">세트 소장 25% 할인</span>
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="card_title_text">오늘도 빵 굽는 중</span>
+                    </p>
+                    <span class="card_author">작가명1</span>
+                    <span class="card_discount">세트 소장 25% 할인</span>
                   </div>
                 </li>
-
-                <li>
-                  <div class="HomeView_Poster">
+                <li class="poster_card">
+                  <div class="poster">
                     <img src="./images/webtoon_poster_mockup/17_소행성_302호.png" alt="소행성 302호 포스터" />
                   </div>
-                  <div class="Set_info">
-                    <div class="Set_title">소행성 302호</div>
-                    <span class="Set_author">작가명2</span>
-                    <span class="Set_discount">세트 소장 25% 할인</span>
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="card_title_text">소행성 302호</span>
+                    </p>
+                    <span class="card_author">작가명2</span>
+                    <span class="card_discount">세트 소장 25% 할인</span>
                   </div>
                 </li>
-
-                <li>
-                  <div class="HomeView_Poster">
+                <li class="poster_card">
+                  <div class="poster">
                     <img src="./images/webtoon_poster_mockup/18_초록_버스의_종점.png" alt="초록 버스의 종점 포스터" />
                   </div>
-                  <div class="Set_info">
-                    <div class="Set_title">초록 버스의 종점</div>
-                    <span class="Set_author">작가명3</span>
-                    <span class="Set_discount">세트 소장 25% 할인</span>
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="card_title_text">초록 버스의 종점</span>
+                    </p>
+                    <span class="card_author">작가명3</span>
+                    <span class="card_discount">세트 소장 25% 할인</span>
                   </div>
                 </li>
-
-                <li>
-                  <div class="HomeView_Poster">
+                <li class="poster_card">
+                  <div class="poster">
                     <img src="./images/webtoon_poster_mockup/19_말_없는_라이벌.png" alt="말 없는 라이벌 포스터" />
                   </div>
-                  <div class="Set_info">
-                    <div class="Set_title">말 없는 라이벌</div>
-                    <span class="Set_author">작가명4</span>
-                    <span class="Set_discount">세트 소장 25% 할인</span>
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="card_title_text">말 없는 라이벌</span>
+                    </p>
+                    <span class="card_author">작가명4</span>
+                    <span class="card_discount">세트 소장 25% 할인</span>
                   </div>
                 </li>
-
-                <li>
-                  <div class="HomeView_Poster">
+                <li class="poster_card">
+                  <div class="poster">
                     <img src="./images/webtoon_poster_mockup/20_작은_유령의_월세.png" alt="작은 유령의 월세 포스터" />
                   </div>
-                  <div class="Set_info">
-                    <div class="Set_title">작은 유령의 월세</div>
-                    <span class="Set_author">작가명5</span>
-                    <span class="Set_discount">세트 소장 25% 할인</span>
+                  <div class="card_info">
+                    <p class="card_title">
+                      <span class="card_title_text">작은 유령의 월세</span>
+                    </p>
+                    <span class="card_author">작가명5</span>
+                    <span class="card_discount">세트 소장 25% 할인</span>
                   </div>
                 </li>
               </ul>
-
-              <button class="DailyList_nxt_btn SetList_nxt_btn" type="button" aria-label="세트 할인 다음 작품 보기">
+              <button type="button" class="carousel_btn" aria-label="세트 할인 다음 작품 보기">
                 <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
               </button>
             </div>
           </section>
-
         </div>
 
         <aside class="content_right">
-          <!-- TODO: 실시간 랭킹 (real_time_rank) -->
-          <!-- TODO: 신작 실시간 랭킹 (real_time_rank_new) -->
+          <!-- TODO: 실시간 인기웹툰 (aside_section + section_head + filter_list + rank_list) -->
+          <!-- TODO: 실시간 신작랭킹 (위와 같은 구조) -->
           <a class="banner" href="#">
-            <img src="./images/fictional_ad_banners/밤책방_300x250.png" alt="밤책방 광고"/>
+            <img src="./images/fictional_ad_banners/밤책방_300x250.png" alt="밤책방 광고" />
           </a>
+          <!-- TODO: 공지사항 (aside_section + section_head + more_link) -->
+          <!-- TODO: 네이버웹툰 앱 설치 안내 -->
         </aside>
       </div>
-
-
     </main>
-    <footer>
+    <footer class="inner">
       <ul class="footer_btn_banner">
         <li>
           <img

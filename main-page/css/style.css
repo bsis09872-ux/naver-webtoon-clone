@@ -1,13 +1,42 @@
 /* ========================================
-   0. 공통 너비 · 가운데 정렬
+   style.css 구성
+   0. 레이아웃      : 공통 너비(.inner), 본문 · aside 2단
+   1~3. 헤더
+   4~10. 공통 컴포넌트 (어느 섹션에서나 재사용)
+     4. 섹션 머리말    .home_section .section_head .section_title .more_link
+     5. 필터 목록      .filter_list .filter_btn
+     6. 캐러셀         .carousel .carousel_btn
+     7. 포스터 목록    .poster_list (+ 크기 poster_lg / poster_md / poster_tall)
+     8. 작품 카드      .poster_card .poster .card_info ...
+     9. 뱃지          .badge_up .rank_badge
+     10. 배너         .banner .banner_wide
+   11. 섹션별 차이   (공통 컴포넌트로 표현 못 하는 부분만)
+   12~. 푸터
    ======================================== */
-.Header_BrandBar,
-.Header_NaviBar,
-.container,
-footer {
-  flex-shrink: 0;
-  width: 1190px;
-  margin: 0 auto;
+
+/* ========================================
+   0. 레이아웃
+   ======================================== */
+/* 헤더 · 본문 · 푸터가 함께 쓰는 가운데 정렬 너비 */
+.inner {
+  width: var(--layout-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+/* 본문(왼쪽) · aside(오른쪽) 2단 */
+.content_wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--aside-width);
+  gap: var(--column-gap);
+  margin-top: 45px;
+}
+/* 양쪽 모두 섹션을 세로로 쌓기만 하면 되도록 flex column + gap */
+.content_left,
+.content_right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  min-width: 0;
 }
 /* ========================================
    1. 헤더 전체 · 구분선
@@ -179,222 +208,104 @@ header {
   color: #fff;
   background-color: var(--color-primary);
 }
+
 /* ========================================
-   4. 메인 콘텐츠 제목 · 전체보기
+   4. 섹션 머리말 (제목 · 필터 · 더보기)
    ======================================== */
-.HomeView_Daily,
-.Updates_Head,
-.Set_Head {
+/* 제목 줄: 왼쪽 묶음 + 오른쪽 더보기 */
+.section_head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
+  gap: 16px;
+  min-height: 50px;
+  margin-bottom: 8px;
 }
-/* 핫 장르: 제목·필터 왼쪽, 더보기 오른쪽 */
-.HomeView_Hot_Genre {
+/* 제목 옆에 필터·툴팁 등을 나란히 */
+.section_head_main {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 76px;
+  gap: 18px;
+  min-width: 0;
 }
-/* 핫 장르: 제목 위, 필터 아래 */
-.Hot_Genre_Head {
-  display: flex;
+/* 제목 아래로 필터를 내릴 때 */
+.section_head_main.is_stacked {
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-  height: 76px;
+  gap: 12px;
 }
-.Daily_Head,
-.Updates_Head,
-.Set_Head {
-  display: flex;
-  justify-content: space-between;
-}
-.HomeView_Daily h2,
-.HomeView_Hot_Genre h2,
-.HomeView_Updates h2,
-.HomeView_Set h2 {
-  font-size: 20px;
+.section_title {
+  font-size: var(--font-size-title);
   font-weight: 600;
-  line-height: 21px;
+  line-height: 1.2;
   color: var(--color-text);
 }
-.HomeView_Hot_Genre h2 span {
-  font-weight: 800;
+/* 제목 안 강조 단어 (예: 감성) */
+.section_title strong {
+  font-weight: 700;
 }
-.HomeView_Daily i,
-.HomeView_Hot_Genre i, 
-.HomeView_Updates i,
-.HomeView_Set i {
-  font-size: 12px;
-  line-height: 21px;
-}
-.HomeView_Daily > a span,
-.HomeView_Hot_Genre > a span,
-.HomeView_Updates > a span,
-.HomeView_Set > a span {
-  font-weight: 500;
-  line-height: 21px;
+.more_link {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-size-sub);
   color: var(--color-text-soft);
 }
-/* ========================================
-   5. 메인 콘텐츠 정렬 필터 · 구분점
-   ======================================== */
-.Daily_Head .filters,
-.Hot_Genre_Head .filters {
-  display: flex;
+.more_link i {
+  font-size: 12px;
 }
-.Daily_Head .filters > li,
-.Hot_Genre_Head .filters > li {
+
+/* ========================================
+   5. 필터 목록 (점 구분)
+   - 정렬 기준, 장르, (aside) 전체 · 여성 · 남성
+   ======================================== */
+.filter_list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filter_list li {
   position: relative;
   padding: 0 8px;
 }
-.Daily_Head .filters > li:first-of-type {
-  margin-left: 10px;
+.filter_list li:first-child {
+  padding-left: 0;
 }
-.Hot_Genre_Head .filters > li:first-of-type {
-  margin-left: 0;
-}
-/* 첫 항목을 제외한 필터 앞에 구분점 표시 */
-.Daily_Head .filters > li:not(.first)::after,
-.Hot_Genre_Head .filters > li:not(.first)::after {
+/* 두 번째 항목부터 앞에 구분점 */
+.filter_list li + li::before {
   content: "";
   position: absolute;
   top: calc(50% - 2px);
   left: -2px;
-  display: block;
   width: 4px;
   height: 4px;
   border-radius: 50%;
   background: var(--color-line-primary);
 }
-.Daily_Head .filters button.on,
-.Hot_Genre_Head .filters button.on {
+.filter_btn {
+  font-size: var(--font-size-sub);
+  color: var(--color-text-soft);
+}
+.filter_btn.on {
+  font-weight: 600;
   color: var(--color-primary);
 }
+
 /* ========================================
-   6. 작품 목록 · 포스터 · 캐러셀
+   6. 캐러셀 (목록 + 다음 버튼)
    ======================================== */
-.DailyList_wrap,
-.GenreList_wrap,
-.UpdatesList_wrap,
-.SetList_wrap {
-  /* 다음 버튼의 위치 기준 */
+/* 다음 버튼의 위치 기준 */
+.carousel {
   position: relative;
 }
-.DailyList,
-.GenreList,
-.UpdatesList,
-.SetList {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.DailyList li,
-.GenreList li,
-.UpdatesList li,
-.SetList li {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--color-text);
-}
-.DailyList .HomeView_Poster {
-  width: 230px;
-  height: 300px;
-  overflow: hidden;
-}
-.GenreList .HomeView_Poster,
-.UpdatesList .HomeView_Poster {
-  width: 160px;
-  height: 207px;
-  overflow: hidden;
-}
-.SetList .HomeView_Poster {
-  width: 160px;
-  height: 227px;
-  overflow: hidden;
-}
-.DailyList img {
-  width: 230px;
-  object-fit: cover;
-  border-radius: 4px;
-  transition: all 0.3s;
-}
-.GenreList .HomeView_Poster img,
-.UpdatesList .HomeView_Poster img,
-.SetList .HomeView_Poster img {
-  width: 160px;
-  object-fit: cover;
-  border-radius: 4px;
-  transition: all 0.3s;
-}
-.DailyList .HomeView_Poster:hover > img,
-.GenreList .HomeView_Poster:hover > img,
-.UpdatesList .HomeView_Poster:hover > img,
-.SetList .HomeView_Poster:hover > img  {
-  transform: scale(1.2);
-}
-/* ========================================
-   7. 작품 제목 · 작가명 · 업데이트 표시
-   ======================================== */
-.DailyList .Daily_info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 235px;
-  height: 55px;
-  text-align: left;
-}
-.GenreList .Genre_info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 260px;
-  height: 55px;
-  text-align: left;
-}
-.DailyList .Daily_title {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-}
-.DailyList .Daily_title span {
-  line-height: 1;
-}
-.DailyList .Daily_title span + span {
-  margin-left: 5px;
-}
-.Daily_info a {
-  font-size: 14px;
-  font-weight: 100;
-  color: var(--color-text);
-  cursor: pointer;
-}
-.updated_badge {
-  width: 17px;
-  height: 13px;
-  font-size: 10px;
-  font-weight: 200;
-  text-align: center;
-  color: red;
-  border: 1px solid red;
-  border-radius: 0.5px;
-}
-/* ========================================
-   8. 다음 작품 버튼 (캐러셀 버튼)
-   ======================================== */
-.DailyList_nxt_btn {
-  /* 부모 DailyList_wrap을 기준으로 겹쳐 배치 */
+.carousel_btn {
   position: absolute;
-  /* 위쪽 130px + 버튼 높이 절반 20px = 중심 150px */
-  top: 130px;
-  /* 40px 버튼이 오른쪽 끝에 반쯤 걸치도록 이동 */
+  /* 포스터 높이의 가운데 - 버튼 절반(20px) → 목록마다 top 값을 따로 쓰지 않아도 됨 */
+  top: calc(var(--poster-h, 207px) / 2 - 20px);
+  /* 40px 버튼이 오른쪽 끝에 반쯤 걸치도록 */
   right: -20px;
-  z-index: 1;
+  z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -402,66 +313,191 @@ header {
   height: 40px;
   font-size: 16px;
   color: var(--color-line-primary);
-  background-color: #fff;
+  background-color: var(--color-white);
   border-radius: 50%;
   box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
 }
+
 /* ========================================
-   9. 가로 광고 배너
+   7. 포스터 목록 · 크기
+   - 크기는 CSS 변수 두 개로만 정한다.
+     --poster-w : 포스터 너비
+     --poster-h : 포스터 높이 (캐러셀 버튼 위치도 이 값을 따라감)
+   - 크기 클래스는 .carousel 에 붙여서 목록과 버튼이 같은 값을 물려받게 한다.
    ======================================== */
-.container .banner {
+.poster_lg   { --poster-w: 230px; --poster-h: 300px; } /* 요일 웹툰 */
+.poster_md   { --poster-w: 160px; --poster-h: 207px; } /* 장르 · 매일+ */
+.poster_tall { --poster-w: 160px; --poster-h: 227px; } /* 세트 할인 */
+
+.poster_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* ========================================
+   8. 작품 카드
+   ======================================== */
+.poster_card {
+  position: relative;
+  flex: 0 0 var(--poster-w, 160px);
+  width: var(--poster-w, 160px);
+  min-width: 0;
+}
+/* 포스터 틀: 넘치는 부분을 잘라 hover 확대 효과를 가둠 */
+.poster {
+  width: var(--poster-w, 160px);
+  height: var(--poster-h, 207px);
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.poster:hover img {
+  transform: scale(1.2);
+}
+/* 제목 · 작가 · 할인 정보 */
+.card_info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  margin-top: 10px;
+}
+.card_title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 100%;
+  font-size: var(--font-size-body);
+  font-weight: 600;
+  color: var(--color-text);
+}
+/* 긴 제목은 한 줄 말줄임 */
+.card_title_text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card_author {
+  font-size: var(--font-size-sub);
+  color: var(--color-text);
+}
+.card_discount {
+  font-size: var(--font-size-sub);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* ========================================
+   9. 뱃지
+   ======================================== */
+/* UP 표시 */
+.badge_up {
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  height: 15px;
+  padding: 0 2px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-badge);
+  border: 1px solid var(--color-badge);
+  border-radius: 2px;
+}
+/* 포스터 왼쪽 아래에 걸치는 순위 숫자 */
+.rank_badge {
+  position: absolute;
+  top: calc(var(--poster-h, 207px) - 39px);
+  left: 0;
+  z-index: 2;
+  width: 36px;
+  height: 50px;
+  pointer-events: none;
+}
+
+/* ========================================
+   10. 배너
+   ======================================== */
+.banner {
   display: block;
   overflow: hidden;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: var(--radius);
 }
-.banner_horizon img {
+/* 본문 폭 전체를 쓰는 가로 배너 */
+.banner_wide {
   margin-top: 30px;
 }
+
 /* ========================================
-   10. 푸터 전체
+   11. 섹션별 차이
+   ======================================== */
+/* 매일+ 제목 옆 안내 말풍선 */
+.Updates_tooltip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-sub);
+}
+.Updates_tooltip strong {
+  color: var(--color-primary);
+}
+
+/* ========================================
+   12. 푸터 전체
    ======================================== */
 footer {
-  display: block;
   height: 421px;
-  margin: 45px auto 90px;
+  margin-top: 45px;
+  margin-bottom: 90px;
   font-size: 13px;
-  font-weight: 100;
   color: var(--color-text-soft);
 }
 footer li {
   line-height: 19px;
 }
-/* ========================================
-   11. 푸터 이미지 배너
-   ======================================== */
+/* 푸터 이미지 배너 */
 .footer_btn_banner {
   display: flex;
   justify-content: space-around;
 }
+
 /* ========================================
-   12. 푸터 Grid 배치 — 적용 전
+   13. 푸터 Grid 배치
+   첫째 행: 왼쪽 약관 | 오른쪽 약관
+   둘째 행: 회사 정보가 두 열을 모두 차지
    ======================================== */
-/*
-  footer_grid_wrap의 직접 자식 세 개를 배치:
-  첫째 행: 왼쪽 약관 | 오른쪽 약관
-  둘째 행: 회사 정보가 두 열을 모두 차지
-  아래 주석을 해제하면 Grid가 적용됨.
-*/
-/*
 .footer_grid_wrap {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px 30px;
 }
-.footer_company_info {
-  grid-column: span 2;
+.footer_terms_left {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
 }
-*/
+.footer_terms_right {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
+.footer_company_info {
+  display: flex;
+  flex-direction: column;
+  grid-row: 2 / 3;
+  grid-column: 1 / 3;
+}
+
 /* ========================================
-   13. 푸터 약관 · 저작권
+   14. 푸터 약관 · 저작권 · 회사 정보
    ======================================== */
-/* 각 약관 영역 안의 링크 목록을 가로 배치 */
+/* 약관 링크 목록 가로 배치 */
 .footer_terms_left ul,
 .footer_terms_right ul {
   display: flex;
@@ -471,139 +507,10 @@ footer li {
 .copyright_NaverWebtoon {
   padding: 4px 5px 0 0;
 }
-/* ========================================
-   14. 푸터 회사 정보
-   ======================================== */
-.footer_company_info {
-  display: flex;
-  flex-direction: column;
-}
-.footer_company_info ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  text-align: left;
-}
-/* ========================================
-   15. 푸터 하단 주소 · 안내
-   ======================================== */
-/* 최신 HTML에서 주소 목록은 footer_under 안에 있음 */
+/* 회사 정보 · 하단 주소 목록 가로 배치 */
+.footer_company_info ul,
 .footer_under ul {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   text-align: left;
 }
-/* 부모: 같은 너비의 두 열 생성 */
-.footer_grid_wrap {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px 30px;
-}
-/* 왼쪽: 첫째 행, 첫째 열 */
-.footer_terms_left {
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
-}
-/* 오른쪽: 첫째 행, 둘째 열 */
-.footer_terms_right {
-  grid-row: 1 / 2;
-  grid-column: 2 / 3;
-}
-/* 회사 정보: 둘째 행, 두 열 전체 */
-.footer_company_info {
-  grid-row: 2 / 3;
-  grid-column: 1 / 3;
-}
-.footer_terms_left::after {
-  position: absolute;
-  width: 1px;
-  background: var(--color-line-primary);
-  content: "";
-}
-/* 16. 메인 좌측 · 우측 영역 */
-.content_wrap {
-  display: grid;
-  grid-template-columns: 840px 300px;
-  gap: 50px;
-  margin-top: 45px;
-}
-.content_left {
-  min-width: 0;
-}
-.content_right {
-  min-width: 0;
-}
-/* 17. 장르 캐러셀 전용 (작가명 없음) */
-.GenreList {
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-}
-.GenreList > li {
-  position: relative;
-  flex: 0 0 160px;
-  min-width: 0;
-}
-.GenreList .HomeView_Poster {
-  position: relative;
-  width: 160px;
-  height: 207px;
-  overflow: hidden;
-  border-radius: 4px;
-}
-/* 원본과 동일하게 포스터만 확대 */
-.GenreList .HomeView_Poster > img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.GenreList .Genre_rank {
-  position: absolute;
-  top: 168px;
-  left: 0;
-  z-index: 2;
-  width: 36px;
-  height: 50px;
-  pointer-events: none;
-}
-.GenreList .Genre_info {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5px;
-  width: 160px;
-  min-height: 40px;
-  height: auto;
-  text-align: left;
-}
-.GenreList .Genre_info .updated_badge {
-  flex-shrink: 0;
-}
-.GenreList .Genre_info > span:not(.updated_badge) {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-/* 기존 40px 원형 버튼 스타일을 공유하고 위치만 다르게 */
-.GenreList_nxt_btn,
-.UpdatesList_nxt_btn {
-  top: 84px;
-}
-/* 세트 포스터 높이 227px 기준 가운데 */
-.SetList_nxt_btn {
-  top: 94px;
-}
-/* 랭킹 숫자는 hover 애니메이션 대상에서 제외 */
-.GenreList .Genre_rank:hover {
-  transform: none;
-}
-/* 장르 제목 강조는 링크 스타일과 분리 */
-.HomeView_Hot_Genre h2 span {
-  font-weight: 800;
-  color: var(--color-text);
-}
-
