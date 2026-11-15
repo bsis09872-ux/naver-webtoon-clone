@@ -6,6 +6,21 @@
 - 사용 기술: HTML5, CSS3 (Flexbox, Grid, CSS 변수, 컨테이너 쿼리, 미디어 쿼리)
 - 대응 화면 (디바이스별 표준 브레이크포인트): 데스크톱(1024px 이상) · 태블릿(768~1023px) · 모바일(767px 이하)
 
+### 목차
+
+1. [화면 보는 방법](#화면-보는-방법)
+2. [스크린샷](#스크린샷)
+3. [원본 분석과 설계](#원본-분석과-설계)
+4. [과제 구현 내용](#과제-구현-내용)
+5. [폴더 구조](#폴더-구조)
+
+### 채점 기준 대응 요약
+
+| 채점 항목 | 5점 기준 | 이 프로젝트에서 확인할 곳 |
+|---|---|---|
+| HTML 마크업 | 시맨틱 태그로 구조적 페이지 작성 + 웹 접근성(라벨 · 대체 텍스트 등) + 마크업 가독성 | [구조적 마크업](#필수-구조적-마크업-작성) · [웹 접근성 및 가독성](#심화-웹-접근성-및-가독성-확보) |
+| CSS 스타일링 | Flex · Grid 반응형 레이아웃 + 다양한 브레이크포인트 대응 + 재사용 가능한 스타일 구조 | [레이아웃 구현](#필수-웹-페이지-레이아웃-구현) · [반응형 화면](#반응형) · [재사용 스타일 구조](#심화-재사용-가능한-스타일-구조) |
+
 <br />
 
 ## 화면 보는 방법
@@ -80,6 +95,12 @@ http://localhost:5500/main-page/index.html
     </td>
   </tr>
 </table>
+
+| 구간 | 미디어 쿼리 | 바뀌는 것 |
+|---|---|---|
+| 데스크톱 | `min-width: 1024px` (기본 스타일) | 원본과 같은 본문 \| aside 2단. 화면이 좁아지면 포스터 · 간격 · 추천 목록 열 수가 미디어 쿼리 없이 자동으로 줄어듦 |
+| 태블릿 | `min-width: 768px and max-width: 1023px` | aside를 본문 아래로 내리고, aside 안은 2열(랭킹 2개 나란히 · 광고 \| 공지 · 앱 설치) |
+| 모바일 | `max-width: 767px` | 1단 배치 · 작품 목록은 손가락으로 넘기는 가로 스크롤 · 헤더 링크 축소 · 푸터 1열 |
 
 <br />
 
@@ -156,8 +177,8 @@ http://localhost:5500/main-page/index.html
 | Grid: 본문 \| aside 2단 배치 | [0f4817b](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/0f4817b) | [style.css L30-44](main-page/css/style.css#L30-L44) |
 | Grid: 이달의 신작 3열 · 베스트도전 2단 · 실시간 순위 행 | [73eaced](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/73eaced) | [style.css L576-677](main-page/css/style.css#L576-L677) |
 | Grid: 푸터 `grid-template-areas` 영역 배치 | [73eaced](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/73eaced) | [style.css L753-870](main-page/css/style.css#L753-L870) |
-| 반응형: 표준 브레이크포인트 — 태블릿(`min-width: 768px and max-width: 1023px`) · 모바일(`max-width: 767px`) | [3ac9359](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/3ac9359) (모바일), 태블릿은 커밋 전 | [style.css L871-1054](main-page/css/style.css#L871-L1054) |
-| 데스크톱(1024px 이상) 안에서는 미디어 쿼리 없이 유동 처리: `clamp()` 간격 · `auto-fit` 추천 목록 열 수 | 커밋 전 | [style.css L30-44](main-page/css/style.css#L30-L44) · [L626-634](main-page/css/style.css#L626-L634) |
+| 반응형: 표준 브레이크포인트 — 태블릿(`min-width: 768px and max-width: 1023px`) · 모바일(`max-width: 767px`) | [3ac9359](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/3ac9359) · [2e9b609](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/2e9b609) | [style.css L871-1054](main-page/css/style.css#L871-L1054) |
+| 데스크톱(1024px 이상) 안에서는 미디어 쿼리 없이 유동 처리: `clamp()` 간격 · `auto-fit` 추천 목록 열 수 | [2e9b609](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/2e9b609) | [style.css L30-44](main-page/css/style.css#L30-L44) · [L626-634](main-page/css/style.css#L626-L634) |
 
 ### [심화] 웹 접근성 및 가독성 확보
 
@@ -166,10 +187,10 @@ http://localhost:5500/main-page/index.html
 | 검색창 `label`을 화면에서 숨기고 스크린리더에만 읽히는 `.sr-only` | [cb88d08](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/cb88d08) | [index.html L56](main-page/index.html#L56) · [common.css L111-121](common.css#L111-L121) |
 | 여러 `nav`를 구분하는 `aria-label` (콘텐츠 서비스 / 웹툰 메뉴 / 푸터 바로가기) | [cb88d08](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/cb88d08) | [index.html L33](main-page/index.html#L33) · [L80](main-page/index.html#L80) · [L1125](main-page/index.html#L1125) |
 | 필터 버튼의 선택 상태를 `aria-pressed`로 전달 | [cb88d08](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/cb88d08) | [index.html L115](main-page/index.html#L115) |
-| 현재 페이지 메뉴(홈)에 `aria-current="page"` | 커밋 전 | [index.html L83](main-page/index.html#L83) |
+| 현재 페이지 메뉴(홈)에 `aria-current="page"` | [2e9b609](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/2e9b609) | [index.html L83](main-page/index.html#L83) |
 | 모든 이미지 대체 텍스트(`alt`), 장식 아이콘은 `aria-hidden="true"` | [cb88d08](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/cb88d08) | [index.html L1080](main-page/index.html#L1080) |
 | 키보드 포커스 표시 `:focus-visible` | [cb88d08](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/cb88d08) | [common.css L123-126](common.css#L123-L126) |
-| 검색창 입력 중 테두리 강조 `:focus-within` | 커밋 전 | [style.css L133-139](main-page/css/style.css#L133-L139) |
+| 검색창 입력 중 테두리 강조 `:focus-within` | [2e9b609](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/2e9b609) | [style.css L133-139](main-page/css/style.css#L133-L139) |
 | 마크업 가독성: 중첩 태그 줄 개행 · 섹션 주석 · 의미 있는 클래스명 | [9601f55](https://github.com/bsis09872-ux/naver-webtoon-clone/commit/9601f55) | [index.html L107-200](main-page/index.html#L107-L200) |
 
 ### [심화] 재사용 가능한 스타일 구조
@@ -199,5 +220,5 @@ naver-webtoon-clone
 └── screenshots           # README 캡처 이미지
 ```
 
-> 작품 포스터, 작품명, 작가명, 배너는 과제용으로 만든 가상 콘텐츠입니다.
-> `js/main-page.js`는 필터 버튼을 눌렀을 때 선택 모양만 바꾸는 최소 스크립트입니다. 이번 과제(HTML · CSS)의 평가 대상이 아닙니다.
+> - 작품 포스터, 작품명, 작가명, 배너는 과제용으로 만든 가상 콘텐츠입니다.
+> - `js/main-page.js`는 필터 버튼을 눌렀을 때 선택 모양만 바꾸는 최소 스크립트입니다. 이번 과제(HTML · CSS)의 평가 대상이 아닙니다.
