@@ -13,7 +13,7 @@
    11. 섹션별 차이   매일+ 툴팁, 이달의 신작 · 베스트도전 배치
    12. 오른쪽 aside  랭킹 · 배너 · 공지사항 · 앱 설치 안내
    13. 푸터         Grid 영역(grid-template-areas) 배치
-   14. 반응형       작은 노트북(1199px 이하) · 모바일(767px 이하)
+   14. 반응형       데스크톱(1024px 이상) · 태블릿(768~1023px) · 모바일(767px 이하)
    ======================================== */
 
 /* ========================================
@@ -30,7 +30,8 @@
 .content_wrap {
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--aside-width);
-  gap: var(--column-gap);
+  /* 화면이 좁아지면 본문 · aside 간격도 50px → 32px까지 함께 줄어듦 */
+  gap: clamp(32px, 4vw, var(--column-gap));
   margin-top: 45px;
 }
 /* 양쪽 모두 섹션을 세로로 쌓기만 하면 되도록 flex column + gap */
@@ -128,6 +129,13 @@ header {
   padding: 0 10px;
   font-size: 14px;
   border: 1px solid var(--color-line-primary);
+}
+/* 입력 중에는 검색창 전체 테두리로 포커스 표시 */
+.SearchBox:focus-within {
+  border-color: var(--color-primary);
+}
+.SearchBox input:focus-visible {
+  outline: none;
 }
 /* 검색 입력 */
 .SearchBox input {
@@ -308,8 +316,8 @@ header {
   position: absolute;
   /* 포스터 높이의 가운데 - 버튼 절반(20px) → 목록마다 top 값을 따로 쓰지 않아도 됨 */
   top: calc(var(--poster-h, 207px) / 2 - 20px);
-  /* 40px 버튼이 오른쪽 끝에 반쯤 걸치도록 */
-  right: -20px;
+  /* 40px 버튼이 오른쪽 끝에 걸치도록 (화면 양쪽 여백 16px 안쪽 → 가로 스크롤 방지) */
+  right: -12px;
   z-index: 3;
   display: flex;
   justify-content: center;
@@ -620,7 +628,8 @@ header {
   --poster-w: 110px;
   --poster-h: 90px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* 칸 너비가 240px보다 좁아지면 자동으로 1열 → 별도 미디어 쿼리 불필요 */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px 24px;
 }
 .challenge_item {
@@ -860,44 +869,40 @@ header {
 }
 
 /* ========================================
-   14. 반응형
-   - 기본(1200px 이상): 원본 PC 화면
-   - 작은 노트북(1199px 이하): 본문이 화면 폭에 맞춰 줄어듦
-   - 모바일(767px 이하): 1단 배치, 목록은 손가락으로 넘기는 가로 스크롤
+   14. 반응형 (디바이스별 표준 브레이크포인트)
+   - 데스크톱(min-width: 1024px): 기본 스타일. 본문 폭이 화면에 맞춰 유동적으로 줄어듦
+   - 태블릿(min-width: 768px and max-width: 1023px): aside를 본문 아래로, aside 안은 2열
+   - 모바일(max-width: 767px): 1단 배치, 목록은 손가락으로 넘기는 가로 스크롤
    ※ 포스터 크기는 7번의 CSS 변수가 캐러셀 너비에 맞춰 자동 계산하므로
      여기서는 '몇 개를 보여줄지(--poster-count)'만 바꾼다.
    ======================================== */
 
-/* ---------- 14-1. 작은 노트북 ---------- */
-@media (max-width: 1199px) {
+/* ---------- 14-1. 태블릿 (768~1023px) ---------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* 본문 · aside 1단 (aside는 본문 아래로) */
   .content_wrap {
-    gap: 32px;
-  }
-  /* 화면 양쪽 여백(16px)보다 덜 걸치게 → 가로 스크롤 방지 */
-  .carousel_btn {
-    right: -12px;
-  }
-  /* 베스트도전: 큰 카드 위 · 추천 목록 아래로 쌓기 */
-  .challenge_row {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--section-gap);
   }
-  /* 큰 카드는 가로형(이미지 | 설명)으로 */
-  .challenge_feature .poster_card {
+  /* aside 안은 2열: 랭킹 2개 나란히 → 광고 | 공지 → 앱 설치 */
+  .content_right {
     display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--section-gap) 32px;
   }
-  .challenge_feature .card_info {
-    margin-top: 0;
-  }
-  /* 푸터 배너 간격 축소 */
-  .footer_btn_banner {
+  /* aside 배너 3개: 광고(왼쪽) | 작가 모집 2개 세로(오른쪽) 로 작게 */
+  .aside_ads {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
     gap: 10px;
+  }
+  .aside_banners {
+    gap: 8px;
   }
 }
 
-/* ---------- 14-2. 모바일 ---------- */
+/* ---------- 14-2. 모바일 (767px 이하) ---------- */
 @media (max-width: 767px) {
   /* 헤더: 웹소설 · 시리즈 링크 숨기고 검색창 축소 */
   .BrandBar_left nav {
@@ -974,9 +979,17 @@ header {
     scroll-snap-align: start;
   }
   /* 베스트도전: 큰 카드 세로형으로 되돌리고 추천 목록 1열 */
+  .challenge_row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--section-gap);
+  }
   .challenge_feature .poster_card {
+    display: grid;
     grid-template-columns: 140px minmax(0, 1fr);
     gap: 14px;
+  }
+  .challenge_feature .card_info {
+    margin-top: 0;
   }
   .challenge_feature {
     --poster-h: 115px;
