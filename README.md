@@ -117,13 +117,44 @@ python3 -m http.server 5500
 
 ## 📚 더 알아보기
 
+<div align="center">
 <table>
   <tr>
-    <td align="center" width="33%">
+    <td align="center" valign="top" width="260">
+      <br />
       <a href="./readme/analysis.md">
-        <h3>🔍 원본 분석과 설계</h3>
+        <b>🔍 원본 분석과 설계</b>
       </a>
-      개발자 도구로 원본 구조 분석<br />
+      <br />
+      <sub>원본 구조 분석 · 영역 분석표</sub>
+      <br />
+      <br />
+    </td>
+    <td align="center" valign="top" width="260">
+      <br />
+      <a href="./readme/implementation.md">
+        <b>🛠️ 구현 상세</b>
+      </a>
+      <br />
+      <sub>항목별 커밋 · 코드 위치</sub>
+      <br />
+      <br />
+    </td>
+    <td align="center" valign="top" width="260">
+      <br />
+      <a href="./readme/retrospective.md">
+        <b>💭 회고</b>
+      </a>
+      <br />
+      <sub>기술 스택 · 소감 · 트러블 슈팅</sub>
+      <br />
+      <br />
+    </td>
+  </tr>
+</table>
+</div>
+
+<br />
       영역 분석표 · 계획에서 바뀐 부분
     </td>
     <td align="center" width="33%">
